@@ -10,9 +10,11 @@
     <style>
 
         .cart {
-            max-width: 1000px;
-            margin: 30px auto;
+            max-width: 1150px;
             background-color: #fff;
+            margin: auto;
+            margin-top: 30px;
+            margin-bottom: 30px;
             padding: 20px;
             border-radius: 10px;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
@@ -23,12 +25,22 @@
             margin-bottom: 20px;
         }
 
+        .cart p {
+            font-size: 16px;
+            margin-bottom: 20px;
+        }
+
         .cart-item {
             display: flex;
+            width: 90%;
+            height: 255px;
             justify-content: space-between;
-            align-items: center;
-            padding: 15px 0;
+            padding: 15px 10px 10px 15px;
+            margin-right: 350px;
+            margin-left: 20px;
             border-bottom: 1px solid #eee;
+            position: relative;
+            align-items: flex-start;
         }
 
         .cart-item img {
@@ -38,58 +50,107 @@
         }
 
         .cart-item-info {
+            padding: 10px 0px 10px 0px;
             display: flex;
             align-items: center;
             gap: 20px;
+            width: 100%;
         }
 
         .cart-item-info h3 {
             font-size: 16px;
+            margin-bottom: 10px;
+        }
+
+        .cart-item-info h4 {
+            display: flex;
+            font-size: 16px;
+            margin: 80px 0px 10px 0px;            
+        }
+        
+        .cart-item-info p {
+            font-size: 12px;
+            margin: 0px 0px 15px 0px;
         }
 
         .cart-item-price {
+            text-align: right;
             font-size: 16px;
+            margin-left: 80px;
+            width: 90%;
         }
 
         .cart-item-controls {
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 10px; /* ระยะห่างระหว่างปุ่มและช่องกรอกข้อมูล */
+            margin: 5px 0; /* ระยะห่างบนและล่างของกล่องควบคุม */
         }
 
         .cart-item-controls input {
-            width: 40px;
-            text-align: center;
+            width: 35px; /* กำหนดความกว้างของช่องกรอกข้อมูล */
+            text-align: center; /* จัดข้อความให้อยู่ตรงกลางช่องกรอกข้อมูล */
+            padding: 5px; /* เพิ่มพื้นที่ภายในช่องกรอกข้อมูล */
+            border: 1px solid #ccc; /* เพิ่มขอบของช่องกรอกข้อมูล */
+            border-radius: 4px; /* ทำมุมของขอบเป็นโค้ง */
+            font-size: 14px; /* ขนาดของข้อความในช่องกรอกข้อมูล */
         }
 
         .cart-item-controls button {
-            padding: 5px;
-            background-color: #f2f7f0;
-            border: none;
-            cursor: pointer;
-            border-radius: 4px;
+            padding: 4px 8px; /* เพิ่มพื้นที่ภายในปุ่ม (top-bottom และ left-right) */
+            background-color: #e7f3eb; /* สีพื้นหลังปุ่ม */
+            border: 1px solid #c1d7c7; /* ขอบของปุ่ม */
+            cursor: pointer; /* แสดงเคอร์เซอร์เป็นรูปมือเมื่อวางเมาส์เหนือปุ่ม */
+            border-radius: 4px; /* ทำมุมของขอบปุ่มเป็นโค้ง */
+            font-size: 16px; /* ขนาดของข้อความในปุ่ม */
+            transition: background-color 0.3s ease; /* เพิ่มการเปลี่ยนสีพื้นหลังเมื่อเมาส์ชี้ไปที่ปุ่ม */
+        }
+
+        .cart-item-controls button:hover {
+            background-color: #d0e3d3; /* เปลี่ยนสีพื้นหลังของปุ่มเมื่อเมาส์ชี้ไปที่ปุ่ม */
         }
 
         .cart-summary {
             background-color: #e7f3eb;
             padding: 20px;
             border-radius: 10px;
-            width: 300px;
+            width: 380px;
+            height: 400px;
+            margin-left: auto;
         }
 
         .cart-summary h2 {
             font-size: 18px;
+            margin: 0;
+        }
+
+        .cart-summary span {
+            font-size: 14px;
             margin-bottom: 15px;
         }
 
         .cart-summary p {
-            font-size: 16px;
-            margin-bottom: 10px;
+            font-size: 18px;
+            display: flex;
+            justify-content: space-between;
+            margin: 25px 0;
+        }
+
+        .cart-summary p span {
+            font-size: 18px;
         }
 
         .cart-summary-total {
-            font-size: 20px;
-            margin-bottom: 20px;
+            font-size: 18px;
+            display: flex;
+            justify-content: space-between;
+            margin: 25px 0;
+        }
+
+        .cart-summary-total span {
+            font-size: 18px;
+            display: block;
+            text-align: right;
         }
 
         .cart-summary button {
@@ -107,6 +168,13 @@
         }
 
         .remove-item {
+            display: flex;
+            position: absolute;
+            bottom: 0px;
+            right: 0;
+            margin-right: 10px;
+            padding: 10px;
+            cursor: pointer;
             font-size: 18px;
             color: #333;
             background-color: transparent;
@@ -120,7 +188,6 @@
 
         .cart-content {
             display: flex;
-            justify-content: space-between;
         }
 
     </style>
@@ -183,6 +250,7 @@
                                 <h3>ชื่อสินค้า</h3>
                                 <p>179x112 ซม.</p>
                                 <p>สีอะลูมิเนียม</p>
+                                <h4>จำนวน</h4>
                                 <div class="cart-item-controls">
                                     <button>-</button>
                                     <input type="text" value="1">
@@ -191,7 +259,7 @@
                             </div>
                         </div>
                         <div class="cart-item-price">20,000 ฿</div>
-                        <button class="remove-item">🗑️</button>
+                        <button class="remove-item"><i class="fas fa-trash-alt"></i></button>
                     </div>
 
                     <div class="cart-item">
@@ -201,6 +269,7 @@
                                 <h3>ชื่อสินค้า</h3>
                                 <p>179x112 ซม.</p>
                                 <p>สีอะลูมิเนียม</p>
+                                <h4>จำนวน</h4>
                                 <div class="cart-item-controls">
                                     <button>-</button>
                                     <input type="text" value="1">
@@ -209,7 +278,7 @@
                             </div>
                         </div>
                         <div class="cart-item-price">20,000 ฿</div>
-                        <button class="remove-item">🗑️</button>
+                        <button class="remove-item"><i class="fas fa-trash-alt"></i></button>
                     </div>
 
                     <div class="cart-item">
@@ -219,6 +288,7 @@
                                 <h3>ชื่อสินค้า</h3>
                                 <p>179x112 ซม.</p>
                                 <p>สีอะลูมิเนียม</p>
+                                <h4>จำนวน</h4>
                                 <div class="cart-item-controls">
                                     <button>-</button>
                                     <input type="text" value="1">
@@ -227,15 +297,16 @@
                             </div>
                         </div>
                         <div class="cart-item-price">20,000 ฿</div>
-                        <button class="remove-item">🗑️</button>
+                        <button class="remove-item"><i class="fas fa-trash-alt"></i></button>
                     </div>
                 </div>
 
                 <div class="cart-summary">
-                    <h2>สรุปยอด</h2>
-                    <p>สินค้า (3) 60,000 ฿</p>
-                    <p>ราคาค่าจัดส่ง 99 ฿</p>
-                    <div class="cart-summary-total">ยอดรวม 60,099 ฿</div>
+                    <h2>จัดส่งไปที่ </h2>
+                    <span>อ.เมืองขอนแก่น จ.ขอนแก่น 40000</span>
+                    <p>สินค้า (3) <span>60,000 ฿</span></p>
+                    <p>ราคาค่าจัดส่ง <span>99 ฿</span></p>
+                    <div class="cart-summary-total">ยอดรวม <span>60,099 ฿</span></div>
                     <button type="button">ชำระเงิน</button>
                 </div>
             </div>
