@@ -12,6 +12,12 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
     <link rel="stylesheet" href="nav_styles.css" />
     <style>
+        html,
+        body {
+            height: 100%;
+            margin: 0;
+        }
+
         .welcome-page {
             display: flex;
             justify-content: space-between;
@@ -174,7 +180,7 @@
         .hotproduct-box {
             position: relative;
             padding: 20px;
-            margin-bottom: 20px;
+            margin-bottom: 50px;
         }
 
         .hottitle {
@@ -196,6 +202,7 @@
             scrollbar-width: none;
         }
 
+
         .product-card {
             flex: 0 0 25%;
             margin-right: 20px;
@@ -215,6 +222,7 @@
             object-fit: cover;
 
         }
+
         .HOT-tag {
             position: absolute;
             background: #FA802D;
@@ -225,11 +233,13 @@
             font-weight: bold;
             text-transform: capitalize;
         }
+
         .hotpd-info {
             position: relative;
             width: 100%;
             padding-top: 10px;
         }
+
         .pd-name {
             display: inline-block;
             font-size: 20px;
@@ -252,7 +262,7 @@
         .nxt-btn {
             border: none;
             width: 10vw;
-            height: 100%;
+            height: 60%;
             position: absolute;
             top: 0;
             display: flex;
@@ -343,6 +353,57 @@
         .heart-btn:hover i {
             color: black;
             background-color: transparent;
+        }
+
+        .footer {
+            margin-top: 80px;
+            background-color: #d4efe0;
+            padding: 20px;
+            text-align: center;
+            width: 100%;
+        }
+
+        .footer p {
+            margin-bottom: 10px;
+            font-size: 14px;
+        }
+
+        .footer .social-icons a {
+            margin: 0 10px;
+            text-decoration: none;
+            font-size: 18px;
+            color: #333;
+        }
+
+        /* ยังคง CSS เดิมทั้งหมด และเพิ่มส่วนนี้ที่ด้านล่างของ CSS */
+
+        html,
+        body {
+            min-width: 1200px;
+            /* หรือความกว้างขั้นต่ำที่ต้องการให้เว็บไซต์แสดงผลได้อย่างสมบูรณ์ */
+            overflow-x: auto;
+        }
+
+        body {
+            zoom: 1;
+            transform-origin: top left;
+        }
+
+        @media screen and (max-width: 1199px) {
+            body {
+                zoom: calc(100vw / 1200);
+                width: 1200px;
+            }
+        }
+
+        /* สำหรับ Firefox ที่ไม่รองรับ zoom */
+        @-moz-document url-prefix() {
+            @media screen and (max-width: 1199px) {
+                body {
+                    transform: scale(calc(100vw / 1200));
+                    width: 1200px;
+                }
+            }
         }
     </style>
 </head>
@@ -544,5 +605,15 @@
     </body>
     <main></main>
 </body>
+<footer class="footer">
+    <p>ติดต่อเรา</p>
+    <p>Line: @housely</p>
+    <p>Customer Contact Center: 1112</p>
+    <div class="social-icons">
+        <a href="#"><i class="fab fa-line"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-facebook-f"></i></a>
+    </div>
+</footer>
 
 </html>
