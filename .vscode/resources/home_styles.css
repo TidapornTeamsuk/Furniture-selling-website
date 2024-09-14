@@ -5,7 +5,7 @@
     height: 500px;
     background-color: #dff3ea;
     padding: 20px;
-    position: relative; /* เพิ่ม position: relative เพื่อให้สามารถจัดวาง absolute elements ได้ */
+    position: relative;
 }
 
 .slogan-box {
@@ -53,7 +53,7 @@
     top: 0;
     right: 0;
     bottom: 0;
-    width: 50%; /* ให้พื้นที่ด้านขวาประมาณครึ่งหนึ่งของ welcome-page */
+    width: 50%;
 }
 
 .circle {
@@ -63,6 +63,6 @@
     border-radius: 50%;
     position: absolute;
     top: 50%;
-    right: 200px; /* ระยะห่างจากขอบขวา */
+    right: 200px;
     transform: translateY(-50%);
 }
