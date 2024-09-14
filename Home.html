@@ -3,175 +3,175 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Housely - Furnish Your Dream House</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <title>Housely</title>
+    <link href="https://fonts.googleapis.com/css2?family=Aboreto&family=Anuphan:wght@400;500;700&display=swap" rel="stylesheet">
     <style>
         body {
-            font-family: 'Poppins', sans-serif;
+            font-family: 'Anuphan', sans-serif;
+            background-color: #DFF3EA;
             margin: 0;
             padding: 0;
-            background-color: #f0faf9;
-            color: #333;
         }
 
-        .navbar {
-            background-color: #edf7f4;
-            padding: 1rem;
+        .container {
+            width: 90%;
+            margin: 0 auto;
+        }
+
+        header {
             display: flex;
             justify-content: space-between;
             align-items: center;
+            padding: 20px 0;
         }
 
-        .navbar a {
-            text-decoration: none;
-            color: #333;
-            margin-right: 20px;
+        header img {
+            width: 120px;
         }
 
-        .hero-section {
-            background-color: #eaf6f3;
-            padding: 50px 0;
+        .search-bar input {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            width: 300px;
+        }
+
+        .main-banner {
+            background-color: #DFF3EA;
+            padding: 40px 0;
             text-align: center;
         }
 
-        .hero-section h1 {
-            font-size: 36px;
-            color: #333;
-            margin-bottom: 10px;
+        .main-banner h1 {
+            font-family: 'Aboreto', cursive;
+            font-size: 3em;
+            margin: 0;
         }
 
-        .hero-section p {
-            font-size: 18px;
-            margin-bottom: 30px;
+        .main-banner p {
+            font-family: 'Anuphan', sans-serif;
+            font-size: 1.2em;
+            margin: 10px 0 20px;
         }
 
-        .hero-section img {
-            width: 50%;
+        .main-banner button {
+            background-color: #FA802D;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 20px;
+            font-size: 1.1em;
+            cursor: pointer;
+        }
+
+        .products-section {
+            margin: 40px 0;
+        }
+
+        .products-section h2 {
+            font-family: 'Aboreto', cursive;
+            font-size: 2.5em;
+            text-align: center;
+        }
+
+        .product-grid {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+
+        .product-card {
+            width: 23%;
+            background-color: white;
+            border-radius: 10px;
+            text-align: center;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .product-card img {
+            width: 100%;
             border-radius: 10px;
         }
 
-        .button-primary {
-            background-color: #187498;
-            color: white;
-            padding: 10px 20px;
-            border: none;
-            border-radius: 5px;
-            text-decoration: none;
-        }
-
-        .button-primary:hover {
-            background-color: #145b7f;
-        }
-
-        .featured-section {
-            padding: 30px;
-            background-color: white;
-            text-align: center;
-        }
-
-        .featured-section img {
-            width: 80%;
-            margin-bottom: 20px;
-        }
-
-        .hot-products {
-            padding: 30px;
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 20px;
-            background-color: white;
-        }
-
-        .product {
-            border: 1px solid #eee;
-            padding: 20px;
-            text-align: center;
-        }
-
-        .product img {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-        }
-
-        .product p {
+        .product-card h3 {
+            font-size: 1.5em;
             margin: 10px 0;
         }
 
-        .badge-hot {
-            background-color: #ff5722;
+        .product-card p {
+            color: #FA802D;
+            font-size: 1.2em;
+        }
+
+        .hot-label {
+            background-color: #FA802D;
             color: white;
             padding: 5px 10px;
             border-radius: 20px;
-            font-size: 12px;
+            font-weight: bold;
+            position: relative;
+            top: -10px;
         }
 
         .footer {
-            padding: 30px;
-            background-color: #edf7f4;
             text-align: center;
-            font-size: 14px;
+            padding: 20px;
+            background-color: #FAFAFA;
+            color: #333;
+            font-size: 0.9em;
         }
-
     </style>
 </head>
 <body>
 
-    <div class="navbar">
-        <a href="#">แนะนำการซื้อสินค้า</a>
-        <a href="#">ห้องดีไซน์พิเศษ</a>
-        <a href="#">โปรโมชั่น</a>
-        <a href="#">สินค้าที่เข้าชมล่าสุด</a>
-    </div>
+    <header class="container">
+        <img src="logo.png" alt="Housely">
+        <div class="search-bar">
+            <input type="text" placeholder="ค้นหาสินค้าที่คุณต้องการ...">
+        </div>
+    </header>
 
-    <section class="hero-section">
+    <section class="main-banner">
         <h1>FURNISH YOUR DREAM HOUSE!</h1>
-        <p>เปลี่ยนทุกห้องในบ้านให้เป็นสไตล์ของคุณ ด้วยเฟอร์นิเจอร์ดีไซน์จาก Housely</p>
-        <img src="https://via.placeholder.com/600x400" alt="Furniture">
-        <br><br>
-        <a href="#" class="button-primary">Discover the Perfect Design</a>
+        <p>เปลี่ยนทุกห้องให้เป็นพื้นที่ในฝันของคุณด้วยเฟอร์นิเจอร์จาก Housely</p>
+        <button>DISCOVER THE PERFECT DESIGN</button>
     </section>
 
-    <section class="featured-section">
-        <img src="https://via.placeholder.com/600x300" alt="Abstract Metal Wall Art">
-        <p>ตกแต่งผนังของคุณด้วยงานศิลปะโลหะที่เป็นเอกลักษณ์</p>
-        <div>
-            <a href="#">Abstract Metal Wall Art</a> | 
-            <a href="#">Coastal Metal Wall Art Decor</a> | 
-            <a href="#">Metal Wall Art</a>
-        </div>
-    </section>
-
-    <section class="hot-products">
-        <div class="product">
-            <div class="badge-hot">Hot</div>
-            <img src="https://via.placeholder.com/200x200" alt="Product 1">
-            <p>ผลงานศิลปะ 1</p>
-            <p>ราคา: 20,000฿</p>
-        </div>
-        <div class="product">
-            <div class="badge-hot">Hot</div>
-            <img src="https://via.placeholder.com/200x200" alt="Product 2">
-            <p>ผลงานศิลปะ 2</p>
-            <p>ราคา: 20,000฿</p>
-        </div>
-        <div class="product">
-            <div class="badge-hot">Hot</div>
-            <img src="https://via.placeholder.com/200x200" alt="Product 3">
-            <p>ผลงานศิลปะ 3</p>
-            <p>ราคา: 20,000฿</p>
-        </div>
-        <div class="product">
-            <div class="badge-hot">Hot</div>
-            <img src="https://via.placeholder.com/200x200" alt="Product 4">
-            <p>ผลงานศิลปะ 4</p>
-            <p>ราคา: 20,000฿</p>
+    <section class="products-section container">
+        <h2>Hot Products</h2>
+        <div class="product-grid">
+            <div class="product-card">
+                <div class="hot-label">Hot</div>
+                <img src="product1.jpg" alt="Product 1">
+                <h3>สินค้า 1</h3>
+                <p>20,000฿</p>
+            </div>
+            <div class="product-card">
+                <div class="hot-label">Hot</div>
+                <img src="product2.jpg" alt="Product 2">
+                <h3>สินค้า 2</h3>
+                <p>20,000฿</p>
+            </div>
+            <div class="product-card">
+                <div class="hot-label">Hot</div>
+                <img src="product3.jpg" alt="Product 3">
+                <h3>สินค้า 3</h3>
+                <p>20,000฿</p>
+            </div>
+            <div class="product-card">
+                <div class="hot-label">Hot</div>
+                <img src="product4.jpg" alt="Product 4">
+                <h3>สินค้า 4</h3>
+                <p>20,000฿</p>
+            </div>
         </div>
     </section>
 
-    <div class="footer">
-        &copy; 2024 Housely. All rights reserved.
-    </div>
+    <footer class="footer">
+        &copy; 2024 Housely. All Rights Reserved.
+    </footer>
 
 </body>
 </html>
