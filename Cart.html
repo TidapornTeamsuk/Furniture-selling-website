@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ตะกร้าสินค้า - Housely</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f8f8f8;
+            color: #333;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            background-color: #f2f7f0;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            text-decoration: none;
+            color: #333;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 15px;
+        }
+
+        nav ul li {
+            font-size: 14px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #333;
+        }
+
+        .search-bar {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .search-bar input {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        .search-bar button {
+            padding: 10px;
+            background-color: #e5e5e5;
+            border: none;
+            cursor: pointer;
+        }
+
+        .icons a {
+            text-decoration: none;
+            font-size: 20px;
+            margin-left: 15px;
+            color: #333;
+        }
+
+        .cart {
+            max-width: 1000px;
+            margin: 30px auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .cart h1 {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        .cart-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        .cart-item img {
+            width: 100px;
+            height: auto;
+            margin-right: 20px;
+        }
+
+        .cart-item-info {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .cart-item-info h3 {
+            font-size: 16px;
+        }
+
+        .cart-item-price {
+            font-size: 16px;
+        }
+
+        .cart-item-controls {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .cart-item-controls input {
+            width: 40px;
+            text-align: center;
+        }
+
+        .cart-item-controls button {
+            padding: 5px;
+            background-color: #f2f7f0;
+            border: none;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+
+        .cart-summary {
+            background-color: #e7f3eb;
+            padding: 20px;
+            border-radius: 10px;
+            width: 300px;
+        }
+
+        .cart-summary h2 {
+            font-size: 18px;
+            margin-bottom: 15px;
+        }
+
+        .cart-summary p {
+            font-size: 16px;
+            margin-bottom: 10px;
+        }
+
+        .cart-summary-total {
+            font-size: 20px;
+            margin-bottom: 20px;
+        }
+
+        .cart-summary button {
+            padding: 10px;
+            background-color: #d4efe0;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            width: 100%;
+            font-size: 16px;
+        }
+
+        .cart-summary button:hover {
+            background-color: #c3e6d6;
+        }
+
+        .remove-item {
+            font-size: 18px;
+            color: #333;
+            background-color: transparent;
+            border: none;
+            cursor: pointer;
+        }
+
+        .remove-item:hover {
+            color: red;
+        }
+
+        .cart-content {
+            display: flex;
+            justify-content: space-between;
+        }
+
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="navbar">
+            <a href="#" class="logo">HOUSELY</a>
+            <nav>
+                <ul>
+                    <li><a href="#">ค้นหาจากห้อง</a></li>
+                    <li><a href="#">หมวดสินค้ายอดฮิต</a></li>
+                    <li><a href="#">โปรโมชั่น</a></li>
+                </ul>
+            </nav>
+            <div class="search-bar">
+                <input type="text" placeholder="ค้นหาสินค้าที่คุณต้องการ...">
+                <button type="submit">🔍</button>
+            </div>
+            <div class="icons">
+                <a href="#">❤️</a>
+                <a href="#">🛒</a>
+                <a href="#">👤</a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="cart">
+            <h1>ตะกร้าสินค้าของคุณ</h1>
+            <p>สินค้าทั้งหมดในตะกร้าของคุณคือ 3 ชิ้น</p>
+
+            <div class="cart-content">
+                <div>
+                    <div class="cart-item">
+                        <div class="cart-item-info">
+                            <img src="placeholder.jpg" alt="สินค้า">
+                            <div>
+                                <h3>ชื่อสินค้า</h3>
+                                <p>179x112 ซม.</p>
+                                <p>สีอะลูมิเนียม</p>
+                                <div class="cart-item-controls">
+                                    <button>-</button>
+                                    <input type="text" value="1">
+                                    <button>+</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="cart-item-price">20,000 ฿</div>
+                        <button class="remove-item">🗑️</button>
+                    </div>
+
+                    <div class="cart-item">
+                        <div class="cart-item-info">
+                            <img src="placeholder.jpg" alt="สินค้า">
+                            <div>
+                                <h3>ชื่อสินค้า</h3>
+                                <p>179x112 ซม.</p>
+                                <p>สีอะลูมิเนียม</p>
+                                <div class="cart-item-controls">
+                                    <button>-</button>
+                                    <input type="text" value="1">
+                                    <button>+</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="cart-item-price">20,000 ฿</div>
+                        <button class="remove-item">🗑️</button>
+                    </div>
+
+                    <div class="cart-item">
+                        <div class="cart-item-info">
+                            <img src="placeholder.jpg" alt="สินค้า">
+                            <div>
+                                <h3>ชื่อสินค้า</h3>
+                                <p>179x112 ซม.</p>
+                                <p>สีอะลูมิเนียม</p>
+                                <div class="cart-item-controls">
+                                    <button>-</button>
+                                    <input type="text" value="1">
+                                    <button>+</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="cart-item-price">20,000 ฿</div>
+                        <button class="remove-item">🗑️</button>
+                    </div>
+                </div>
+
+                <div class="cart-summary">
+                    <h2>สรุปยอด</h2>
+                    <p>สินค้า (3) 60,000 ฿</p>
+                    <p>ราคาค่าจัดส่ง 99 ฿</p>
+                    <div class="cart-summary-total">ยอดรวม 60,099 ฿</div>
+                    <button type="button">ชำระเงิน</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+</body>
+</html>
