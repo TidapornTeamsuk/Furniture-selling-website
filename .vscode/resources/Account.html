@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ข้อมูลส่วนตัว - Housely</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f8f8f8;
+            color: #333;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            background-color: #f2f7f0;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            text-decoration: none;
+            color: #333;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 15px;
+        }
+
+        nav ul li {
+            font-size: 14px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #333;
+        }
+
+        .search-bar {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .search-bar input {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        .search-bar button {
+            padding: 10px;
+            background-color: #e5e5e5;
+            border: none;
+            cursor: pointer;
+        }
+
+        .icons a {
+            text-decoration: none;
+            font-size: 20px;
+            margin-left: 15px;
+            color: #333;
+        }
+
+        .profile {
+            padding: 30px;
+            text-align: left;
+            background-color: #fff;
+            margin: 20px auto;
+            width: 60%;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .profile h1 {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        .profile .info {
+            margin-bottom: 20px;
+        }
+
+        .profile .info p {
+            font-size: 16px;
+            margin-bottom: 10px;
+        }
+
+        .profile .edit-icon {
+            float: right;
+            font-size: 18px;
+            text-decoration: none;
+            color: #333;
+            background-color: #f2f7f0;
+            padding: 5px;
+            border-radius: 50%;
+        }
+
+        .profile button {
+            display: block;
+            padding: 10px 20px;
+            margin: 20px auto;
+            background-color: #d4efe0;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .profile button:hover {
+            background-color: #c3e6d6;
+        }
+
+        .footer {
+            background-color: #d4efe0;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .footer p {
+            margin-bottom: 10px;
+            font-size: 14px;
+        }
+
+        .footer .social-icons a {
+            margin: 0 10px;
+            text-decoration: none;
+            font-size: 18px;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="navbar">
+            <a href="#" class="logo">HOUSELY</a>
+            <nav>
+                <ul>
+                    <li><a href="#">ค้นหาจากห้อง</a></li>
+                    <li><a href="#">หมวดสินค้ายอดฮิต</a></li>
+                    <li><a href="#">โปรโมชั่น</a></li>
+                </ul>
+            </nav>
+            <div class="search-bar">
+                <input type="text" placeholder="ค้นหาสินค้าที่คุณต้องการ...">
+                <button type="submit">🔍</button>
+            </div>
+            <div class="icons">
+                <a href="#">❤️</a>
+                <a href="#">🛒</a>
+                <a href="#">👤</a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="profile">
+            <h1>สวัสดี, Papika</h1>
+            <a href="#" class="edit-icon">✏️</a>
+            <div class="info">
+                <p>ชื่อ: Papika</p>
+                <p>วันเกิด: </p>
+                <p>E-MAIL: </p>
+                <p>เบอร์โทร: </p>
+                <p>ที่อยู่สำหรับการจัดส่ง: </p>
+            </div>
+            <button type="button">บันทึก</button>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>ติดต่อเรา</p>
+        <p>Line: @housely</p>
+        <p>Customer Contact Center: 1112</p>
+        <div class="social-icons">
+            <a href="#">LINE</a>
+            <a href="#">Instagram</a>
+            <a href="#">Facebook</a>
+        </div>
+    </footer>
+
+</body>
+</html>
