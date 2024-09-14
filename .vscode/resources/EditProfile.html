@@ -1,12 +1,15 @@
 <!-- develop -->
 <!DOCTYPE html>
 <html lang="th">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ข้อมูลส่วนตัว - Housely</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">  <!-- icons -->
-    <link href="https://fonts.googleapis.com/css2?family=Aboreto&family=Anuphan:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Aboreto&family=Anuphan:wght@400;500;700&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="nav_styles.css" />
     <style>
         * {
@@ -126,8 +129,10 @@
         }
 
         .profile p span {
-            display: block; /* ทำให้ span เป็น block-level element */
-            text-align: right; /* จัดตำแหน่งข้อความภายใน span ไปทางขวา */
+            display: block;
+            /* ทำให้ span เป็น block-level element */
+            text-align: right;
+            /* จัดตำแหน่งข้อความภายใน span ไปทางขวา */
         }
 
         .footer {
@@ -150,86 +155,97 @@
 
         .info p {
             margin: 10px 0;
-            font-size: 16px; /* ขนาดของฟอนต์ */
-            line-height: 1.5; /* ความสูงของบรรทัด */
+            font-size: 16px;
+            /* ขนาดของฟอนต์ */
+            line-height: 1.5;
+            /* ความสูงของบรรทัด */
         }
 
-        .info input, .info textarea {
+        .info input,
+        .info textarea {
             display: block;
             margin-top: 5px;
             padding: 10px;
             border: 1px solid #ccc;
             border-radius: 4px;
-            width: calc(100% - 22px); /* ความกว้างที่ลดลงจากการ padding และ border */
-            box-sizing: border-box; /* คำนวณ padding และ border ใน width */
-            font-size: 14px; /* ขนาดของฟอนต์ใน input และ textarea */
+            width: calc(100% - 22px);
+            /* ความกว้างที่ลดลงจากการ padding และ border */
+            box-sizing: border-box;
+            /* คำนวณ padding และ border ใน width */
+            font-size: 14px;
+            /* ขนาดของฟอนต์ใน input และ textarea */
         }
 
-        .info input:focus, .info textarea:focus {
-            border-color: #007bff; /* เปลี่ยนสีเส้นขอบเมื่อมีการโฟกัส */
-            outline: none; /* ลบเส้นขอบพื้นฐานที่เกิดจากการโฟกัส */
+        .info input:focus,
+        .info textarea:focus {
+            border-color: #007bff;
+            /* เปลี่ยนสีเส้นขอบเมื่อมีการโฟกัส */
+            outline: none;
+            /* ลบเส้นขอบพื้นฐานที่เกิดจากการโฟกัส */
         }
 
         .info textarea {
-            resize: vertical; /* อนุญาตให้ปรับขนาดแนวตั้ง */
+            resize: vertical;
+            /* อนุญาตให้ปรับขนาดแนวตั้ง */
         }
-
     </style>
 </head>
+
 <body>
     <header>
         <a href="#" class="logo">HOUSELY</a>
         <nav>
-          <ul>
-            <li>
-              <a href="#">ค้นหาจากห้อง <i class="fas fa-caret-down"></i></a>
-              <ul>
-                <li><a href="#">ห้องนอน</a></li>
-                <li><a href="#">ห้องนั่งเล่น</a></li>
-                <li><a href="#">ห้องครัว</a></li>
-              </ul>
-            </li>
-            <li>
-              <a href="#">หมวดสินค้ายอดฮิต <i class="fas fa-caret-down"></i></a>
-              <ul>
-                <li><a href="#">โต๊ะ</a></li>
-                <li><a href="#">เก้าอี้</a></li>
-                <li><a href="#">ตู้เสื้อผ้า</a></li>
-              </ul>
-            </li>
-            <li>
-              <a href="#">โปรโมชั่น <i class="fas fa-caret-down"></i></a>
-              <ul>
-                <li><a href="#">ส่วนลด 50%</a></li>
-                <li><a href="#">ซื้อ 1 แถม 1</a></li>
-              </ul>
-            </li>
-          </ul>
+            <ul>
+                <li>
+                    <a href="#">ค้นหาจากห้อง <i class="fas fa-caret-down"></i></a>
+                    <ul>
+                        <li><a href="#">ห้องนอน</a></li>
+                        <li><a href="#">ห้องนั่งเล่น</a></li>
+                        <li><a href="#">ห้องครัว</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">หมวดสินค้ายอดฮิต <i class="fas fa-caret-down"></i></a>
+                    <ul>
+                        <li><a href="#">โต๊ะ</a></li>
+                        <li><a href="#">เก้าอี้</a></li>
+                        <li><a href="#">ตู้เสื้อผ้า</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">โปรโมชั่น <i class="fas fa-caret-down"></i></a>
+                    <ul>
+                        <li><a href="#">ส่วนลด 50%</a></li>
+                        <li><a href="#">ซื้อ 1 แถม 1</a></li>
+                    </ul>
+                </li>
+            </ul>
         </nav>
         <div class="search-bar">
-          <input type="text" placeholder="ค้นหาสินค้าที่คุณต้องการ..." />
-          <button type="submit"><i class="fas fa-search"></i></button>
+            <input type="text" placeholder="ค้นหาสินค้าที่คุณต้องการ..." />
+            <button type="submit"><i class="fas fa-search"></i></button>
         </div>
         <div class="icons">
-          <a href="#"><i class="fas fa-heart"></i></a>
-          <a href="#"><i class="fas fa-shopping-cart"></i></a>
-          <a href="#"><i class="fas fa-user"></i></a>
+            <a href="#"><i class="fas fa-heart"></i></a>
+            <a href="#"><i class="fas fa-shopping-cart"></i></a>
+            <a href="#"><i class="fas fa-user"></i></a>
         </div>
-      </div>
+        </div>
     </header>
 
     <main>
         <section class="profile">
             <h1>แก้ไขข้อมูล</h1>
             <form action="/update-info" method="post">
-            <div class="info">
-                <p>ชื่อ : <span><input type="text" name="name" value="Papika"></span></p>
-                <p>วันเกิด : <span><input type="date" name="dob" value="1998-12-01"></span></p>
-                <p>E-MAIL : <span><input type="email" name="email" value="Papika@gmail.com"></span></p>
-                <p>เบอร์โทร : <span><input type="tel" name="phone" value="098-1225555"></span></p>
-                <p>ที่อยู่สำหรับการจัดส่ง : <span><textarea name="address" rows="4">อ.เมืองขอนแก่น จ.ขอนแก่น 40000</textarea></span></p>
-            </div>
-            <button type="button">บันทึก</button>
+                <div class="info">
+                    <p>ชื่อ : <span><input type="text" name="name" value="Papika"></span></p>
+                    <p>วันเกิด : <span><input type="date" name="dob" value="1998-12-01"></span></p>
+                    <p>E-MAIL : <span><input type="email" name="email" value="Papika@gmail.com"></span></p>
+                    <p>เบอร์โทร : <span><input type="tel" name="phone" value="098-1225555"></span></p>
+                    <p>ที่อยู่สำหรับการจัดส่ง : <span><textarea name="address"
+                                rows="4">อ.เมืองขอนแก่น จ.ขอนแก่น 40000</textarea></span></p>
+                </div>
+                <button type="button">บันทึก</button>
         </section>
     </main>
 
@@ -245,4 +261,5 @@
     </footer>
 
 </body>
+
 </html>
