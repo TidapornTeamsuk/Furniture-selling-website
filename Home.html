@@ -1,177 +1,64 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Housely</title>
-    <link href="https://fonts.googleapis.com/css2?family=Aboreto&family=Anuphan:wght@400;500;700&display=swap" rel="stylesheet">
-    <style>
-        body {
-            font-family: 'Anuphan', sans-serif;
-            background-color: #DFF3EA;
-            margin: 0;
-            padding: 0;
-        }
-
-        .container {
-            width: 90%;
-            margin: 0 auto;
-        }
-
-        header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 20px 0;
-        }
-
-        header img {
-            width: 120px;
-        }
-
-        .search-bar input {
-            padding: 10px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            width: 300px;
-        }
-
-        .main-banner {
-            background-color: #DFF3EA;
-            padding: 40px 0;
-            text-align: center;
-        }
-
-        .main-banner h1 {
-            font-family: 'Aboreto', cursive;
-            font-size: 3em;
-            margin: 0;
-        }
-
-        .main-banner p {
-            font-family: 'Anuphan', sans-serif;
-            font-size: 1.2em;
-            margin: 10px 0 20px;
-        }
-
-        .main-banner button {
-            background-color: #FA802D;
-            color: white;
-            border: none;
-            padding: 10px 20px;
-            border-radius: 20px;
-            font-size: 1.1em;
-            cursor: pointer;
-        }
-
-        .products-section {
-            margin: 40px 0;
-        }
-
-        .products-section h2 {
-            font-family: 'Aboreto', cursive;
-            font-size: 2.5em;
-            text-align: center;
-        }
-
-        .product-grid {
-            display: flex;
-            justify-content: space-around;
-            flex-wrap: wrap;
-        }
-
-        .product-card {
-            width: 23%;
-            background-color: white;
-            border-radius: 10px;
-            text-align: center;
-            padding: 20px;
-            margin-bottom: 20px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        }
-
-        .product-card img {
-            width: 100%;
-            border-radius: 10px;
-        }
-
-        .product-card h3 {
-            font-size: 1.5em;
-            margin: 10px 0;
-        }
-
-        .product-card p {
-            color: #FA802D;
-            font-size: 1.2em;
-        }
-
-        .hot-label {
-            background-color: #FA802D;
-            color: white;
-            padding: 5px 10px;
-            border-radius: 20px;
-            font-weight: bold;
-            position: relative;
-            top: -10px;
-        }
-
-        .footer {
-            text-align: center;
-            padding: 20px;
-            background-color: #FAFAFA;
-            color: #333;
-            font-size: 0.9em;
-        }
-    </style>
-</head>
-<body>
-
-    <header class="container">
-        <img src="logo.png" alt="Housely">
+<html lang="th">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home - Housely</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Aboreto&family=Anuphan:wght@100..700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <link rel="stylesheet" href="nav_styles.css" />
+  </head>
+  <body>
+    <header>
+      <div class="navbar">
+        <a href="#" class="logo">HOUSELY</a>
+        <nav>
+          <ul>
+            <li>
+              <a href="#">ค้นหาจากห้อง <i class="fas fa-caret-down"></i></a>
+              <ul>
+                <li><a href="#">ห้องนอน</a></li>
+                <li><a href="#">ห้องนั่งเล่น</a></li>
+                <li><a href="#">ห้องครัว</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="#">หมวดสินค้ายอดฮิต <i class="fas fa-caret-down"></i></a>
+              <ul>
+                <li><a href="#">โต๊ะ</a></li>
+                <li><a href="#">เก้าอี้</a></li>
+                <li><a href="#">ตู้เสื้อผ้า</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="#">โปรโมชั่น <i class="fas fa-caret-down"></i></a>
+              <ul>
+                <li><a href="#">ส่วนลด 50%</a></li>
+                <li><a href="#">ซื้อ 1 แถม 1</a></li>
+              </ul>
+            </li>
+          </ul>
+        </nav>
         <div class="search-bar">
-            <input type="text" placeholder="ค้นหาสินค้าที่คุณต้องการ...">
+          <input type="text" placeholder="ค้นหาสินค้าที่คุณต้องการ..." />
+          <button type="submit"><i class="fas fa-search"></i></button>
         </div>
+        <div class="icons">
+          <a href="#"><i class="fas fa-heart"></i></a>
+          <a href="#"><i class="fas fa-shopping-cart"></i></a>
+          <a href="#"><i class="fas fa-user"></i></a>
+        </div>
+      </div>
     </header>
 
-    <section class="main-banner">
-        <h1>FURNISH YOUR DREAM HOUSE!</h1>
-        <p>เปลี่ยนทุกห้องให้เป็นพื้นที่ในฝันของคุณด้วยเฟอร์นิเจอร์จาก Housely</p>
-        <button>DISCOVER THE PERFECT DESIGN</button>
-    </section>
-
-    <section class="products-section container">
-        <h2>Hot Products</h2>
-        <div class="product-grid">
-            <div class="product-card">
-                <div class="hot-label">Hot</div>
-                <img src="product1.jpg" alt="Product 1">
-                <h3>สินค้า 1</h3>
-                <p>20,000฿</p>
-            </div>
-            <div class="product-card">
-                <div class="hot-label">Hot</div>
-                <img src="product2.jpg" alt="Product 2">
-                <h3>สินค้า 2</h3>
-                <p>20,000฿</p>
-            </div>
-            <div class="product-card">
-                <div class="hot-label">Hot</div>
-                <img src="product3.jpg" alt="Product 3">
-                <h3>สินค้า 3</h3>
-                <p>20,000฿</p>
-            </div>
-            <div class="product-card">
-                <div class="hot-label">Hot</div>
-                <img src="product4.jpg" alt="Product 4">
-                <h3>สินค้า 4</h3>
-                <p>20,000฿</p>
-            </div>
-        </div>
-    </section>
-
-    <footer class="footer">
-        &copy; 2024 Housely. All Rights Reserved.
-    </footer>
-
-</body>
+    <main></main>
+  </body>
 </html>
