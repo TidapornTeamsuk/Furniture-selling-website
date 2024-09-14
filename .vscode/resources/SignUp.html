@@ -6,7 +6,7 @@
     <title>Housely - Sign In / Sign Up</title>
     <link href="https://fonts.googleapis.com/css2?family=Anuphan:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap" rel="stylesheet" >
+    <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap" rel="stylesheet">
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
@@ -47,13 +47,11 @@
             left : 175px;
             margin-top: 20px;
             font-size: 20px;
-        
         }
 
-        /* Left side (Sign In) */
-        .left {
+        .right {
             background-color: #d7efe9;
-            padding: 60px;
+            padding: 40px;
             width: 50%;
             display: flex;
             flex-direction: column;
@@ -61,20 +59,23 @@
             align-items: center;
         }
 
-        .left h2 {
+        .right h2 {
             font-family: 'Archivo Black', sans-serif;
-            font-size: 36px;
-            margin-bottom : 0%;
+            font-size: 32px;
+            margin-bottom: 10px;
             color: #000;
+            text-align: center;
         }
 
-        .left p {
+        .right p {
             font-family: 'Anuphan', sans-serif;
-            margin-bottom: 40px;
+            margin-bottom: 20px;
             color: #333;
             font-size: 14px;
-            font-weight:600;
+            font-weight: 600;
+            text-align: center;
         }
+
 
         .input-group {
             position: relative;
@@ -100,37 +101,27 @@
             color: #999;
         }
 
-
-        .forgot-password {
-            display: flex;
-            justify-content: flex-end;
-            margin-bottom: 20px;
-        }
-
-        .forgot-password a.pass {
-            font-family: 'Anuphan', sans-serif;
-            color: #000;
-            text-decoration: none;
-            font-size: 14px;
-            font-weight: 600;
-        }
-
-        .btn-signin {
+        .btn-signup {
             font-family: 'Archivo Black', sans-serif;
             background-color: #000;
             color: #fff;
-            padding: 15px 30px;
+            padding: 12px 25px;
             border: none;
-            font-size: 18px;
-            border-radius: 20px;
+            font-size: 16px;
+            border-radius: 8px;
             cursor: pointer;
             font-weight: bold;
+            margin-top: 10px;
         }
 
-        /* Right side (Sign Up) */
-        .right {
+        .btn-signup:hover {
+            background-color: #333;
+        }
+
+
+        .left {
             width: 50%;
-            background: url('https://img.freepik.com/free-photo/green-sofa-white-living-room-with-blank-table-mockup_43614-835.jpg?t=st=1726307297~exp=1726310897~hmac=3a0f392ad3627ad1d69494f02b048b0066502616a1b9f98660d58dbfe37a1681&w=740') no-repeat center center;
+            background: url('https://img.freepik.com/free-photo/view-room-interior-with-furniture-copy-space_23-2150680540.jpg?w=826&t=st=1726318791~exp=1726319391~hmac=d2277e75fe36eee270cbfa7fddf84f7ee280c18e18c917e70046d8ed6e3fe4d0') no-repeat center center;
             background-size: cover;
             padding: 60px;
             display: flex;
@@ -141,13 +132,13 @@
             text-align: center;
         }
 
-        .container-right {
+        .container-left {
             padding: 75px 100px;
-            background-color: rgba(0, 0, 0, 0.2); /* Sets a semi-transparent black background */
+            background-color: rgba(0, 0, 0, 0.2); 
         }
 
         
-        .right h2 {
+        .left h2 {
             font-family: 'Archivo Black', sans-serif;
             font-size: 36px;
             margin-bottom: 50px;
@@ -156,16 +147,15 @@
             
         }
 
-        .right p {
+        .left p {
             font-family: 'Anuphan', sans-serif;
             font-size: 14px;   
             margin-bottom: 0px;
             opacity: 100%;
             color: #000;
-           
         }
 
-        .right p.discover {
+        .left p.discover {
             font-family: 'Archivo Black', sans-serif;
             font-size: 18px;
             margin-bottom: 20px;
@@ -173,7 +163,6 @@
             opacity: 100%;
             color: #000;
         }
-
 
         .btn-signup {
             font-family: 'Archivo Black', sans-serif;
@@ -185,44 +174,57 @@
             border-radius: 20px;
             cursor: pointer;
         }
-
-
     </style>
 </head>
 <body>
 
 <div class="container">
-    <!-- Left (Sign In) -->
+    <a href="#" class="logo">HOUSELY</a>
     <div class="left">
-        <a href="#" class="logo">HOUSELY</a>
-        <h2>SIGN IN</h2>
-        <p>Sign In to Continue Your Journey</p>
+        <div class="container-left">
+            <p>Already Have an Account?</p>
+            <h2>WELCOME<br>BACK!</h2>
+            <p class = "discover">Your<br>Dream<br>Home<br>Awaits</p>
+            <button class="btn-signup">SIGN IN</button>
+        </div>
+    </div>
 
+    <div class="right">
+        <h2>CREATE ACCOUNT</h2>
+        <p>Join Us and Start Designing Your Dream Home</p>
+        
+        <div class="input-group">
+            <i class="fa fa-user"></i>
+            <input type="text" id="name" placeholder="Name">
+        </div>
+        
         <div class="input-group">
             <i class="fa fa-envelope"></i>
             <input type="email" id="email" placeholder="Email">
         </div>
-
+        
+        <div class="input-group">
+            <i class="fa fa-phone"></i>
+            <input type="tel" id="phone" placeholder="Phone Number">
+        </div>
+        
+        <div class="input-group">
+            <i class="fa fa-home"></i>
+            <input type="text" id="address" placeholder="Address">
+        </div>
+        
         <div class="input-group">
             <i class="fa fa-lock"></i>
             <input type="password" id="password" placeholder="Password">
         </div>
-
-        <div class="forgot-password">
-            <a class = "pass" href="#">Forgot your password?</a>
+        
+        <div class="input-group">
+            <i class="fa fa-lock"></i>
+            <input type="password" id="confirm-password" placeholder="Confirm Password">
         </div>
-        <button class="btn-signin">SIGN IN</button>
-    </div>
-
-    <!-- Right (Sign Up) -->
-    <div class="right">
-        <div class="container-right">
-            <p>Doesn't Have an Account</p>
-            <h2>WELCOME<br>NEWBIE!</h2>
-            <p class = "discover">Begin<br>Your<br>Home<br>Makeover<br>Journey!</p>
-            <button class="btn-signup">SIGN UP</button>
-        </div>
-
+        
+        
+        <button class="btn-signup">SIGN UP</button>
     </div>
 </div>
 
