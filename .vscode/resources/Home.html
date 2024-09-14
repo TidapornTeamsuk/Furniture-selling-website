@@ -15,7 +15,171 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
     />
     <link rel="stylesheet" href="nav_styles.css" />
-    <link rel="stylesheet" href="home_styles.css"/>
+    <style>
+      .welcome-page {
+        display: flex;
+        justify-content: space-between;
+        flex-direction: column;
+        height: 500px;
+        background-color: #dff3ea;
+        padding: 20px;
+        position: relative;
+      }
+
+      .slogan-box {
+        position: relative;
+      }
+
+      .slogan {
+        font-family: "Aboreto", cursive;
+        font-size: 32px;
+        text-decoration: none;
+        color: #333;
+        margin: 125px 0 0 250px;
+      }
+
+      .slogan-detail {
+        font-family: "Anuphan", sans-serif;
+        font-weight: 300;
+        font-size: 20px;
+        margin: 10px 0 0 250px;
+      }
+
+      .discover-btn {
+        font-family: "Aboreto", cursive;
+        font-size: 16px;
+        color: #333;
+        background-color: #fff;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 20px;
+        display: flex;
+        align-items: center;
+        width: fit-content;
+        gap: 10px;
+        cursor: pointer;
+        text-decoration: none;
+        margin: 15px 0 0 240px;
+      }
+
+      .discover-btn i {
+        font-size: 16px;
+      }
+
+      .show-img {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        width: 50%;
+      }
+
+      .circle {
+        width: 380px;
+        height: 380px;
+        background-color: #f9ffef;
+        border-radius: 50%;
+        position: absolute;
+        top: 50%;
+        right: 200px;
+        transform: translateY(-50%);
+      }
+
+      .product-image {
+        position: absolute;
+        z-index: 1;
+      }
+
+      /* รูปเกาอี้ */
+      .product-image:nth-child(2) {
+        width: 320px;
+        height: auto;
+        bottom: 20px;
+        left: 220px;
+        z-index: 2;
+      }
+
+      /* รูปโคมไฟ */
+      .product-image:nth-child(3) {
+        width: 330px;
+        height: auto;
+        bottom: 90px;
+        right: 120px;
+      }
+
+      /* รูปโต๊ะ*/
+      .product-image:nth-child(4) {
+        width: 250px;
+        height: auto;
+        bottom: 90px;
+        left: 150px;
+      }
+      .introduce-box {
+        display: flex;
+        justify-content: space-between;
+      }
+
+      .introduce-image {
+        width: 45%; /* ครึ่งหนึ่งของความกว้างของกล่องทั้งหมด */
+        height: auto;
+        margin: 50px; /* เพิ่มช่องว่างระหว่างรูปภาพและข้อความ */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+      }
+
+      .text-and-gallery {
+        margin-top: 50px;
+        margin-right: 50px;
+        width: 50%; /* ข้อความและแกลเลอรีจะกินพื้นที่ครึ่งหนึ่งของกล่อง */
+      }
+
+      .introduce-text {
+        font-family: "Anuphan", sans-serif;
+        font-size: 24px;
+        font-weight: 300;
+        margin-right: 20px;
+        margin-bottom: 20px; /* เพิ่มช่องว่างระหว่างข้อความและแกลเลอรี */
+      }
+
+      .image-gallery {
+        display: flex;
+        justify-content: space-between;
+        gap: 10px; /* เพิ่มช่องว่างระหว่างรูปภาพในแกลเลอรี */
+      }
+
+      .gallery-image {
+        margin-top: 50px;
+        width: 30%;
+        height: auto;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+      }
+      .shopnow-btn {
+        font-family: "Anuphan", sans-serif;
+        font-size: 16px;
+        color: #333;
+        background-color: #dff3ea;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 20px;
+        display: flex;
+        align-items: center;
+        width: fit-content;
+        gap: 10px;
+        cursor: pointer;
+        text-decoration: none;
+        margin: 50px 0px 20px 570px;
+      }
+
+      .shopnow-btn i {
+        font-size: 16px;
+      }
+
+      .hottitle{
+        font-family: 'Anuphan',sans-serif;
+        font-size: 24px;
+        margin-left: 50px;
+        margin-bottom: 20px;
+      }
+    </style>
   </head>
   <body>
     <header>
@@ -72,7 +236,57 @@
           </a>
         </div>
         <div class="show-img">
-            <div class="circle"></div>
+          <div class="circle"></div>
+          <img src="image/chair.png" alt="Product 1" class="product-image" />
+          <img src="image/lamp.png" alt="Product 2" class="product-image" />
+          <img
+            src="image/tableflower.png"
+            alt="Product 3"
+            class="product-image"
+          />
+        </div>
+      </div>
+      <div class="introduce-box">
+        <img
+          src="https://visualalloy.com/cdn/shop/files/large-outdoor-metal-wall-art.webp?v=1715958471&width=1000"
+          alt="image 1"
+          class="introduce-image"
+        />
+        <div class="text-and-gallery">
+          <p class="introduce-text">
+            ในฐานะผู้จัดจำหน่ายเฟอร์นิเจอร์และของแต่งบ้านมุ่งมั่นสรรค์สร้างชีวิตที่ดีกว่าให้คนทั่วไปในทุกๆวัน
+            ด้วยการนำเสนอเฟอร์นิเจอร์และของแต่งบ้านที่มีดีไซน์สวยงามพร้อมทั้งประโยชน์ใช้สอยคุ้มค่าในราคาที่ผู้คนทั่วไปเป็นเจ้าของได้
+            เรามีสินค้าให้คุณเลือกหลากหลายรูปแบบทั้งสินค้าสมาร์ทโฮม
+            เฟอร์นิเจอร์แต่งห้องนอน โซฟา โต๊ะทานอาหาร เก้าอี้
+            ตู้เสื้อผ้าผ้าและสิ่งทอ อุปกรณ์ครัวและเครื่องใช้บนโต๊ะอาหาร
+            ตลอดจนของตกแต่ง
+            และสารพัดสินค้าเพื่อบ้านอีกมากมายพร้อมให้คุณเลือกสรรไปแต่งบ้านในฝันได้แล้ววันนี้ที่
+            HOUSELY!
+          </p>
+          <div class="image-gallery">
+            <img
+              src="https://visualalloy.com/cdn/shop/files/ocean-wall-decor.webp?v=1713648331&width=1000"
+              alt="image 1"
+              class="gallery-image"
+            />
+            <img
+              src="https://visualalloy.com/cdn/shop/files/coastal-metal-wall-art.webp?v=1712148616&width=800"
+              alt="image 2"
+              class="gallery-image"
+            />
+            <img
+              src="https://visualalloy.com/cdn/shop/files/metal-butterfly-wall-art.webp?v=1713646307&width=1000"
+              alt="image 3"
+              class="gallery-image"
+            />
+          </div>
+          <a href="#" class="shopnow-btn">ช้อปเลย <i class="fas fa-arrow-right"></i></a>
+        </div>
+      </div>
+      <div class="hotproduct-box">
+        <h2 class="hottitle">Hot Product</h2>
+        <div class="hot-gallery">
+            
         </div>
       </div>
     </body>
