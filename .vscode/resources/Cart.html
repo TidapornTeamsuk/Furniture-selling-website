@@ -4,74 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ตะกร้าสินค้า - Housely</title>
+    <link rel="stylesheet" href="nav_styles.css" /> 
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Aboreto&family=Anuphan:wght@100..700&display=swap"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"/>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Arial', sans-serif;
-            background-color: #f8f8f8;
-            color: #333;
-        }
-
-        .navbar {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 20px;
-            background-color: #f2f7f0;
-        }
-
-        .logo {
-            font-size: 24px;
-            font-weight: bold;
-            text-decoration: none;
-            color: #333;
-        }
-
-        nav ul {
-            list-style: none;
-            display: flex;
-            gap: 15px;
-        }
-
-        nav ul li {
-            font-size: 14px;
-        }
-
-        nav ul li a {
-            text-decoration: none;
-            color: #333;
-        }
-
-        .search-bar {
-            display: flex;
-            align-items: center;
-            gap: 5px;
-        }
-
-        .search-bar input {
-            padding: 10px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-        }
-
-        .search-bar button {
-            padding: 10px;
-            background-color: #e5e5e5;
-            border: none;
-            cursor: pointer;
-        }
-
-        .icons a {
-            text-decoration: none;
-            font-size: 20px;
-            margin-left: 15px;
-            color: #333;
-        }
 
         .cart {
             max-width: 1000px;
@@ -195,22 +131,42 @@
         <div class="navbar">
             <a href="#" class="logo">HOUSELY</a>
             <nav>
-                <ul>
-                    <li><a href="#">ค้นหาจากห้อง</a></li>
-                    <li><a href="#">หมวดสินค้ายอดฮิต</a></li>
-                    <li><a href="#">โปรโมชั่น</a></li>
-                </ul>
+              <ul>
+                <li>
+                  <a href="#">ค้นหาจากห้อง <i class="fas fa-caret-down"></i></a>
+                  <ul>
+                    <li><a href="#">ห้องนอน</a></li>
+                    <li><a href="#">ห้องนั่งเล่น</a></li>
+                    <li><a href="#">ห้องครัว</a></li>
+                  </ul>
+                </li>
+                <li>
+                  <a href="#">หมวดสินค้ายอดฮิต <i class="fas fa-caret-down"></i></a>
+                  <ul>
+                    <li><a href="#">โต๊ะ</a></li>
+                    <li><a href="#">เก้าอี้</a></li>
+                    <li><a href="#">ตู้เสื้อผ้า</a></li>
+                  </ul>
+                </li>
+                <li>
+                  <a href="#">โปรโมชั่น <i class="fas fa-caret-down"></i></a>
+                  <ul>
+                    <li><a href="#">ส่วนลด 50%</a></li>
+                    <li><a href="#">ซื้อ 1 แถม 1</a></li>
+                  </ul>
+                </li>
+              </ul>
             </nav>
             <div class="search-bar">
-                <input type="text" placeholder="ค้นหาสินค้าที่คุณต้องการ...">
-                <button type="submit">🔍</button>
+              <input type="text" placeholder="ค้นหาสินค้าที่คุณต้องการ..." />
+              <button type="submit"><i class="fas fa-search"></i></button>
             </div>
             <div class="icons">
-                <a href="#">❤️</a>
-                <a href="#">🛒</a>
-                <a href="#">👤</a>
+              <a href="#"><i class="fas fa-heart"></i></a>
+              <a href="#"><i class="fas fa-shopping-cart"></i></a>
+              <a href="#"><i class="fas fa-user"></i></a>
             </div>
-        </div>
+          </div>
     </header>
 
     <main>
