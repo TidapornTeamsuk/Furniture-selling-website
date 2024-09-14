@@ -4,10 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Housely - Sign In / Sign Up</title>
+    <link href="https://fonts.googleapis.com/css2?family=Anuphan:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap" rel="stylesheet" >
     <style>
         body {
-            font-family: 'Poppins', sans-serif;
             margin: 0;
             padding: 0;
             display: flex;
@@ -38,16 +39,18 @@
         }
 
         .left h2 {
+            font-family: 'Archivo Black', sans-serif;
             font-size: 36px;
-            margin-bottom: 10px;
+            margin-bottom : 0%;
             color: #000;
-            font-weight: 5000;
         }
 
         .left p {
+            font-family: 'Anuphan', sans-serif;
             margin-bottom: 40px;
             color: #333;
-            font-size: 18px;
+            font-size: 14px;
+            font-weight: bold;
         }
 
         .input-group {
@@ -56,6 +59,7 @@
         }
 
         .input-group input {
+            font-family: 'Anuphan', sans-serif;
             width: 80%;
             padding: 20px;
             border-radius: 20px;
@@ -66,6 +70,8 @@
         }
 
         .input-group label {
+            font-family: 'Anuphan', sans-serif;
+            font-weight: bold;
             display: flex;
             align-items: center;
             font-size: 16px;
@@ -82,12 +88,15 @@
         }
 
         .forgot-password a {
-            color: #187498;
+            font-family: 'Anuphan', sans-serif;
+            color: #000;
             text-decoration: none;
             font-size: 14px;
+            font-weight: bold;
         }
 
         .btn-signin {
+            font-family: 'Archivo Black', sans-serif;
             background-color: #000;
             color: #fff;
             padding: 15px 30px;
@@ -113,12 +122,14 @@
         }
 
         .container-left {
-            padding: 80px 60px;
+            padding: ;
+            margin: ;
             background-color: rgba(0, 0, 0, 0.2); /* Sets a semi-transparent black background */
         }
 
         
         .right h2 {
+            font-family: 'Archivo Black', sans-serif;
             font-size: 36px;
             margin-bottom: 10px;
             font-weight: 600;
@@ -127,19 +138,32 @@
         }
 
         .right p {
-            font-size: 18px;   
-            margin-bottom: 40px;
+            font-family: 'Anuphan', sans-serif;
+            font-size: 14px;   
+            margin-bottom: 0px;
             opacity: 100%;
+            color: #000;
            
         }
 
+        .right a{
+            font-family: 'Archivo Black', sans-serif;
+            font-size: 20px;
+            margin-bottom: 10px;
+            font-weight: 600;
+            opacity: 100%;
+            color: #000;
+        }
+
+
         .btn-signup {
+            font-family: 'Archivo Black', sans-serif;
             background-color: #000;
             color: #fff;
             padding: 15px 30px;
             border: none;
             font-size: 18px;
-            border-radius: 5px;
+            border-radius: 20px;
             cursor: pointer;
         }
 
@@ -172,7 +196,7 @@
         <div class="container-left">
             <p>Doesn't Have an Account</p>
             <h2>WELCOME<br>NEWBIE!</h2>
-            <p>Begin<br>Your<br>Home<br>Makeover<br>Journey!</p>
+            <a>Begin<br>Your<br>Home<br>Makeover<br>Journey!<br><br></a>
             <button class="btn-signup">SIGN UP</button>
         </div>
 
