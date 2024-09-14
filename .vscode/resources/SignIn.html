@@ -41,7 +41,7 @@
             font-size: 36px;
             margin-bottom: 10px;
             color: #000;
-            font-weight: 600;
+            font-weight: 5000;
         }
 
         .left p {
@@ -56,12 +56,13 @@
         }
 
         .input-group input {
-            width: 100%;
-            padding: 15px;
-            border-radius: 5px;
+            width: 80%;
+            padding: 20px;
+            border-radius: 20px;
             border: 1px solid #ddd;
             margin-top: 10px;
             font-size: 16px;
+            align-items: center;
         }
 
         .input-group label {
@@ -92,14 +93,15 @@
             padding: 15px 30px;
             border: none;
             font-size: 18px;
-            border-radius: 5px;
+            border-radius: 20px;
             cursor: pointer;
+            font-weight: bold;
         }
 
         /* Right side (Sign Up) */
         .right {
             width: 50%;
-            background: url('https://via.placeholder.com/600x600') no-repeat center center;
+            background: url(image/signin.jpg) no-repeat center center;
             background-size: cover;
             padding: 60px;
             display: flex;
@@ -110,15 +112,25 @@
             text-align: center;
         }
 
+        .container-left {
+            padding: 80px 60px;
+            background-color: rgba(0, 0, 0, 0.2); /* Sets a semi-transparent black background */
+        }
+
+        
         .right h2 {
             font-size: 36px;
             margin-bottom: 10px;
             font-weight: 600;
+            opacity: 100%;
+            
         }
 
         .right p {
-            font-size: 18px;
+            font-size: 18px;   
             margin-bottom: 40px;
+            opacity: 100%;
+           
         }
 
         .btn-signup {
@@ -130,6 +142,8 @@
             border-radius: 5px;
             cursor: pointer;
         }
+
+
     </style>
 </head>
 <body>
@@ -155,9 +169,13 @@
 
     <!-- Right (Sign Up) -->
     <div class="right">
-        <h2>WELCOME NEWBIE!</h2>
-        <p>Begin Your Home Makeover Journey!</p>
-        <button class="btn-signup">SIGN UP</button>
+        <div class="container-left">
+            <p>Doesn't Have an Account</p>
+            <h2>WELCOME<br>NEWBIE!</h2>
+            <p>Begin<br>Your<br>Home<br>Makeover<br>Journey!</p>
+            <button class="btn-signup">SIGN UP</button>
+        </div>
+
     </div>
 </div>
 
