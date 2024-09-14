@@ -583,25 +583,6 @@
                 </div>
 
             </div>
-            <script>
-                const productContainers = [...document.querySelectorAll('.hotpd-gallery')];
-                const nxtBtn = [...document.querySelectorAll('.nxt-btn')];
-                const preBtn = [...document.querySelectorAll('.pre-btn')];
-
-                productContainers.forEach((item, i) => {
-                    let containerDimensions = item.getBoundingClientRect();
-                    let containerWidth = containerDimensions.width / 4; // แบ่งพื้นที่เพื่อให้เลื่อนทีละ 4 สินค้า
-
-                    nxtBtn[i].addEventListener('click', () => {
-                        item.scrollLeft += containerWidth;
-                    });
-
-                    preBtn[i].addEventListener('click', () => {
-                        item.scrollLeft -= containerWidth;
-                    });
-                });
-
-            </script>
     </body>
     <main></main>
 </body>
@@ -615,5 +596,23 @@
         <a href="#"><i class="fab fa-facebook-f"></i></a>
     </div>
 </footer>
+<script>
+    const productContainers = [...document.querySelectorAll('.hotpd-gallery')];
+    const nxtBtn = [...document.querySelectorAll('.nxt-btn')];
+    const preBtn = [...document.querySelectorAll('.pre-btn')];
 
+    productContainers.forEach((item, i) => {
+        let containerDimensions = item.getBoundingClientRect();
+        let containerWidth = containerDimensions.width / 4; // แบ่งพื้นที่เพื่อให้เลื่อนทีละ 4 สินค้า
+
+        nxtBtn[i].addEventListener('click', () => {
+            item.scrollLeft += containerWidth;
+        });
+
+        preBtn[i].addEventListener('click', () => {
+            item.scrollLeft -= containerWidth;
+        });
+    });
+
+</script>
 </html>
