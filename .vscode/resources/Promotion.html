@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>โปรโมชัน - Housely</title>
+    <!-- header -->
+    <link rel="stylesheet" href="nav_styles.css" /> 
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Aboreto&family=Anuphan:wght@100..700&display=swap"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"/>
+    <style>
+
+        .all-product {
+            margin: 30px 30px 30px 30px;
+            padding: 30px;
+            text-align: left;
+        }
+
+        .all-product h2 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        .custom-hr {
+            border: 0;
+            height: 4px; /* ความหนาของเส้น */
+            background: #ccc; /* สีของเส้น */
+            margin: 20px 0; /* ระยะห่างด้านบนและด้านล่าง */
+        }
+
+        .product-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .product {
+            background-color: white;
+            border-radius: 10px;
+            padding: 15px;
+            width: 300px;
+            height: 400px;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            text-align: left;
+            margin-bottom: 30px;
+        }
+
+        .product-image {
+            width: 270px; /* ขนาดของ div ที่บรรจุรูปภาพ */
+            height: 300px; /* ขนาดของ div ที่บรรจุรูปภาพ */
+            overflow: hidden; /* ซ่อนส่วนที่เกินออกมาจาก div */
+        }
+
+        .product-image img {
+            width: 100%; /* รูปภาพจะเต็มขนาด div */
+            height: auto; /* รักษาสัดส่วนของรูปภาพ */
+        }
+
+        .product h3 {
+            font-size: 16px;
+            margin-bottom: 5px;
+            text-align: left;
+            margin-top: 10px;
+            margin-bottom: auto;
+        }
+
+        .product p {
+            font-size: 16px;
+            color: #333;
+        }
+
+        .product-icons {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 10px;
+        }
+
+        .product-icons a {
+            text-decoration: none;
+            font-size: 18px;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="navbar">
+            <a href="#" class="logo">HOUSELY</a>
+            <nav>
+              <ul>
+                <li>
+                  <a href="#">ค้นหาจากห้อง <i class="fas fa-caret-down"></i></a>
+                  <ul>
+                    <li><a href="#">ห้องนอน</a></li>
+                    <li><a href="#">ห้องนั่งเล่น</a></li>
+                    <li><a href="#">ห้องครัว</a></li>
+                  </ul>
+                </li>
+                <li>
+                  <a href="#">หมวดสินค้ายอดฮิต <i class="fas fa-caret-down"></i></a>
+                  <ul>
+                    <li><a href="#">โต๊ะ</a></li>
+                    <li><a href="#">เก้าอี้</a></li>
+                    <li><a href="#">ตู้เสื้อผ้า</a></li>
+                  </ul>
+                </li>
+                <li>
+                  <a href="#">โปรโมชั่น <i class="fas fa-caret-down"></i></a>
+                  <ul>
+                    <li><a href="#">ส่วนลด 50%</a></li>
+                    <li><a href="#">ซื้อ 1 แถม 1</a></li>
+                  </ul>
+                </li>
+              </ul>
+            </nav>
+            <div class="search-bar">
+              <input type="text" placeholder="ค้นหาสินค้าที่คุณต้องการ..." />
+              <button type="submit"><i class="fas fa-search"></i></button>
+            </div>
+            <div class="icons">
+              <a href="#"><i class="fas fa-heart"></i></a>
+              <a href="#"><i class="fas fa-shopping-cart"></i></a>
+              <a href="#"><i class="fas fa-user"></i></a>
+            </div>
+          </div>
+    </header>
+
+    <main>
+        <section class="all-product">
+            <h2>ส่วนลด 50%</h2>
+            <hr class="custom-hr">
+            <div class="product-list">
+                <!-- Repeat this block for each product -->
+                <div class="product">
+                    <div class="product-image">
+                        <img src="https://static.wixstatic.com/media/72629d_01b4cb0ea7114521bbf2b5a6f282a0be~mv2.jpg/v1/fill/w_480,h_480,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/72629d_01b4cb0ea7114521bbf2b5a6f282a0be~mv2.jpg" alt="รูปภาพตัวอย่าง">
+                    </div>
+                    <h3>ชื่อสินค้า</h3>
+                    <p><del>20,000฿</del></p>
+                    <p class="sale" style="font-size: 20px; color: red;"> เหลือเพียง 10,000฿</p>
+                    <div class="product-icons">
+                        <a href="#"><i class="fas fa-heart"></i></a>
+                        <a href="#">➤</a>
+                    </div>
+                </div>
+                <!-- Repeat ends -->
+            </div>
+        </section>
+    </main>  
+</body>
+</html>
