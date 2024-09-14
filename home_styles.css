@@ -1,0 +1,68 @@
+.welcome-page {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    height: 500px;
+    background-color: #dff3ea;
+    padding: 20px;
+    position: relative; /* เพิ่ม position: relative เพื่อให้สามารถจัดวาง absolute elements ได้ */
+}
+
+.slogan-box {
+    position: relative;
+}
+
+.slogan {
+    font-family: 'Aboreto', cursive;
+    font-size: 32px;
+    text-decoration: none;
+    color: #333;
+    margin: 125px 0 0 250px;
+}
+
+.slogan-detail {
+    font-family: 'Anuphan', sans-serif;
+    font-weight: 300;
+    font-size: 20px;
+    margin: 10px 0 0 250px;
+}
+
+.discover-btn {
+    font-family: 'Aboreto', cursive;
+    font-size: 16px;
+    color: #333;
+    background-color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    width: fit-content;
+    gap: 10px;
+    cursor: pointer;
+    text-decoration: none;
+    margin: 15px 0 0 240px;
+}
+
+.discover-btn i {
+    font-size: 16px;
+}
+
+.show-img {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 50%; /* ให้พื้นที่ด้านขวาประมาณครึ่งหนึ่งของ welcome-page */
+}
+
+.circle {
+    width: 400px;
+    height: 400px;
+    background-color: #F9FFEF;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    right: 200px; /* ระยะห่างจากขอบขวา */
+    transform: translateY(-50%);
+}
