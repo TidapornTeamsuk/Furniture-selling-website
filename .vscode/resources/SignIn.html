@@ -7,6 +7,18 @@
     <link href="https://fonts.googleapis.com/css2?family=Anuphan:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap" rel="stylesheet" >
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <link
+    href="https://fonts.googleapis.com/css2?family=Aboreto&family=Anuphan:wght@100..700&display=swap"
+    rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="home_styles.css"/>
+    <link rel="stylesheet" href="nav_styles.css" />
     <style>
         body {
             margin: 0;
@@ -25,6 +37,17 @@
             height: 600px;
             background-color: #edf7f4;
             box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1);
+        }
+
+        .container a.logo{
+            display: flex;
+            position:absolute;
+            max-width: 1200px;
+            height: 600px;
+            left : 175px;
+            margin-top: 20px;
+            font-size: 20px;
+        
         }
 
         /* Left side (Sign In) */
@@ -50,7 +73,7 @@
             margin-bottom: 40px;
             color: #333;
             font-size: 14px;
-            font-weight: bold;
+            font-weight:600;
         }
 
         .input-group {
@@ -60,7 +83,7 @@
 
         .input-group input {
             font-family: 'Anuphan', sans-serif;
-            width: 80%;
+            width: 100%;
             padding: 20px;
             border-radius: 20px;
             border: 1px solid #ddd;
@@ -87,12 +110,12 @@
             margin-bottom: 20px;
         }
 
-        .forgot-password a {
+        .forgot-password a.pass {
             font-family: 'Anuphan', sans-serif;
             color: #000;
             text-decoration: none;
             font-size: 14px;
-            font-weight: bold;
+            font-weight: 600;
         }
 
         .btn-signin {
@@ -121,9 +144,8 @@
             text-align: center;
         }
 
-        .container-left {
-            padding: 75px 60px;
-            margin: 10px 10px 10px 10px;
+        .container-right {
+            padding: 75px 100px;
             background-color: rgba(0, 0, 0, 0.2); /* Sets a semi-transparent black background */
         }
 
@@ -131,7 +153,7 @@
         .right h2 {
             font-family: 'Archivo Black', sans-serif;
             font-size: 36px;
-            margin-bottom: 10px;
+            margin-bottom: 50px;
             font-weight: 600;
             opacity: 100%;
             
@@ -146,10 +168,10 @@
            
         }
 
-        .right a{
+        .right p.discover {
             font-family: 'Archivo Black', sans-serif;
-            font-size: 20px;
-            margin-bottom: 10px;
+            font-size: 18px;
+            margin-bottom: 20px;
             font-weight: 600;
             opacity: 100%;
             color: #000;
@@ -175,6 +197,7 @@
 <div class="container">
     <!-- Left (Sign In) -->
     <div class="left">
+        <a href="#" class="logo">HOUSELY</a>
         <h2>SIGN IN</h2>
         <p>Sign In to Continue Your Journey</p>
         <div class="input-group">
@@ -186,17 +209,17 @@
             <input type="password" id="password" placeholder="Enter your password">
         </div>
         <div class="forgot-password">
-            <a href="#">Forgot your password?</a>
+            <a class = "pass" href="#">Forgot your password?</a>
         </div>
         <button class="btn-signin">SIGN IN</button>
     </div>
 
     <!-- Right (Sign Up) -->
     <div class="right">
-        <div class="container-left">
+        <div class="container-right">
             <p>Doesn't Have an Account</p>
             <h2>WELCOME<br>NEWBIE!</h2>
-            <a>Begin<br>Your<br>Home<br>Makeover<br>Journey!<br><br></a>
+            <p class = "discover">Begin<br>Your<br>Home<br>Makeover<br>Journey!</p>
             <button class="btn-signup">SIGN UP</button>
         </div>
 
