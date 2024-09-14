@@ -1,9 +1,11 @@
+<!-- develop -->
 <!DOCTYPE html>
 <html lang="th">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ข้อมูลส่วนตัว - Housely</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">  <!-- icons -->
     <style>
         * {
             margin: 0;
@@ -122,6 +124,11 @@
             background-color: #c3e6d6;
         }
 
+        .profile p span {
+            display: block; /* ทำให้ span เป็น block-level element */
+            text-align: right; /* จัดตำแหน่งข้อความภายใน span ไปทางขวา */
+        }
+
         .footer {
             background-color: #d4efe0;
             padding: 20px;
@@ -167,14 +174,14 @@
 
     <main>
         <section class="profile">
-            <h1>สวัสดี, Papika</h1>
             <a href="#" class="edit-icon">✏️</a>
+            <h1>สวัสดี, Papika</h1>
             <div class="info">
-                <p>ชื่อ: Papika</p>
-                <p>วันเกิด: </p>
-                <p>E-MAIL: </p>
-                <p>เบอร์โทร: </p>
-                <p>ที่อยู่สำหรับการจัดส่ง: </p>
+                <p>ชื่อ : <span>Papika</span></p>
+                <p>วันเกิด : <span>01/12/1998</span></p>
+                <p>E-MAIL : <span>Papika@gmail.com</span></p>
+                <p>เบอร์โทร : <span>098-1225555</span></p>
+                <p>ที่อยู่สำหรับการจัดส่ง : <span>อ.เมืองขอนแก่น จ.ขอนแก่น 40000</span></p>
             </div>
             <button type="button">บันทึก</button>
         </section>
@@ -185,9 +192,9 @@
         <p>Line: @housely</p>
         <p>Customer Contact Center: 1112</p>
         <div class="social-icons">
-            <a href="#">LINE</a>
-            <a href="#">Instagram</a>
-            <a href="#">Facebook</a>
+            <a href="#"><i class="fab fa-line"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
         </div>
     </footer>
 
