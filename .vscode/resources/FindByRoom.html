@@ -1,121 +1,139 @@
 <!DOCTYPE html>
 <html lang="th">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>ค้นหาจากห้อง - Housely</title>
-    <!-- header -->
-    <link rel="stylesheet" href="nav_styles.css" />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Aboreto&family=Anuphan:wght@100..700&display=swap"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
-    />
-    <!-- footer -->
-    <link rel="stylesheet" href="footer.css" />
-    <style>
-      .all-product {
-        margin: 30px 30px 30px 30px;
-        padding: 30px;
-        text-align: left;
-      }
 
-      .all-product h2 {
-        font-size: 24px;
-        margin-bottom: 10px;
-      }
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ค้นหาจากห้อง - Housely</title>
+  <!-- header -->
+  <link rel="stylesheet" href="nav_styles.css" />
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Aboreto&family=Anuphan:wght@100..700&display=swap" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+  <!-- footer -->
+  <link rel="stylesheet" href="footer.css" />
+  <style>
+    .all-product {
+      margin: 30px 30px 30px 30px;
+      padding: 30px;
+      text-align: left;
+    }
 
-      .custom-hr {
-        border: 0;
-        width: 8%;
-        height: 10px;
-        /* ความหนาของเส้น */
-        background: #b1cfd9;
-        /* สีของเส้น */
-        margin: 10px 0 10px 0;
-        /* ระยะห่างด้านบนและด้านล่าง */
-      }
+    .all-product h2 {
+      font-size: 24px;
+      margin-bottom: 10px;
+    }
 
-      .product-list {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 20px;
-      }
+    .custom-hr {
+      border: 0;
+      width: 8%;
+      height: 10px;
+      /* ความหนาของเส้น */
+      background: #b1cfd9;
+      /* สีของเส้น */
+      margin: 10px 0 10px 0;
+      /* ระยะห่างด้านบนและด้านล่าง */
+    }
 
-      .product {
-        background-color: white;
-        border-radius: 10px;
-        padding: 15px;
-        width: 300px;
-        height: 400px;
-        display: flex;
-        flex-direction: column;
-        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-        text-align: left;
-        margin-top: 10px;
-      }
+    .product-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
 
-      .product-image {
-        width: 100%;
-        height: 300px;
-        background-color: #eaeaea;
-        margin-bottom: 10px;
-      }
+    .product {
+      background-color: white;
+      border-radius: 10px;
+      padding: 15px;
+      width: 300px;
+      height: 400px;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      text-align: left;
+      margin-top: 10px;
+    }
 
-      .product h3 {
-        font-size: 16px;
-        margin-bottom: 5px;
-        text-align: left;
-      }
+    .product-image {
+      width: 100%;
+      height: 300px;
+      background-color: #eaeaea;
+      margin-bottom: 10px;
+    }
 
-      .product p {
-        font-size: 16px;
-        color: #333;
-      }
+    .product h3 {
+      font-size: 16px;
+      margin-bottom: 5px;
+      text-align: left;
+    }
 
-      .product-icons {
-        display: flex;
-        justify-content: space-between;
-        margin-top: 10px;
-      }
+    .product p {
+      font-size: 16px;
+      color: #333;
+    }
 
-      .product-icons a {
-        text-decoration: none;
-        font-size: 18px;
-        color: #333;
-      }
+    .product-icons {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 10px;
+    }
 
-      .room-img {
-        width: 50%;
-        height: 50%;
-        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
-        margin-bottom: 20px;
-        border-radius: 5px;
-      }
+    .product-icons a {
+      text-decoration: none;
+      font-size: 18px;
+      color: #333;
+    }
 
-      .header-room {
-        display: flex;
-        flex-flow: row wrap;
-        justify-content: flex-start;
-        gap: 50px;
-      }
+    .room-img {
+      width: 50%;
+      height: 50%;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+      margin-bottom: 20px;
+      border-radius: 5px;
+    }
 
-      .rightHead {
-        max-width: 600px;
-      }
+    .header-room {
+      display: flex;
+      flex-flow: row nowrap;
+      justify-content: flex-start;
+      gap: 50px;
+      position: relative;
+    }
 
-      .room-detail {
-        word-wrap: break-word;
-        overflow-wrap: break-word;
-        line-height: 1.5;
-      }
-      h3{
-        font-size: 18px;
-      }
-      .md-chip {
+    .rightHead {
+      max-width: 600px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .room-detail-container {
+      height: 150px; /* Adjust this value to match the original space for room-detail */
+      overflow: hidden;
+    }
+
+    .room-detail {
+      word-wrap: break-word;
+      overflow-wrap: break-word;
+      line-height: 1.5;
+    }
+    .custom-hr1 {
+      width: 600px;
+      margin: 0px 0 20px 0;
+    }
+
+    .custom-hr2 {
+      border: 0;
+      width: 8%;
+      height: 10px;
+      background: #b1cfd9;
+      margin: 10px 0 10px 0;
+    }
+    h3 {
+      font-size: 18px;
+      font-weight: 600;
+    }
+
+    .md-chip {
       display: inline-block;
       background: #e0e0e0;
       padding: 0 12px;
@@ -146,136 +164,305 @@
       cursor: default;
     }
 
-    input[type="checkbox"]:checked + label {
+    input[type="checkbox"]:checked+label {
       background-color: #DFF3EA;
       color: black;
       transition: all 500ms ease;
     }
-    body, .navbar, .search-bar, .icons, .all-product, .product, .footer {
-  user-select: none;
-}
-input[type="text"] {
-  user-select: text;
-}
-    </style>
-  </head>
 
-  <body>
-    <header>
-      <div class="navbar">
-        <a href="#" class="logo">HOUSELY</a>
-        <nav>
-          <ul>
-            <li>
-              <a href="#">ค้นหาจากห้อง <i class="fas fa-caret-down"></i></a>
-              <ul>
-                <li><a href="#">ห้องนอน</a></li>
-                <li><a href="#">ห้องนั่งเล่น</a></li>
-                <li><a href="#">ห้องครัว</a></li>
-              </ul>
-            </li>
-            <li>
-              <a href="#">หมวดสินค้ายอดฮิต <i class="fas fa-caret-down"></i></a>
-              <ul>
-                <li><a href="#">โต๊ะ</a></li>
-                <li><a href="#">เก้าอี้</a></li>
-                <li><a href="#">ตู้เสื้อผ้า</a></li>
-              </ul>
-            </li>
-            <li>
-              <a href="#">โปรโมชั่น <i class="fas fa-caret-down"></i></a>
-              <ul>
-                <li><a href="#">ส่วนลด 50%</a></li>
-                <li><a href="#">ซื้อ 1 แถม 1</a></li>
-              </ul>
-            </li>
-          </ul>
-        </nav>
-        <div class="search-bar">
-          <input type="text" placeholder="ค้นหาสินค้าที่คุณต้องการ..." />
-          <button type="submit"><i class="fas fa-search"></i></button>
-        </div>
-        <div class="icons">
-          <a href="#"><i class="fas fa-heart"></i></a>
-          <a href="#"><i class="fas fa-shopping-cart"></i></a>
-          <a href="#"><i class="fas fa-user"></i></a>
-        </div>
+    body,
+    .navbar,
+    .search-bar,
+    .icons,
+    .all-product,
+    .product,
+    .footer {
+      user-select: none;
+    }
+
+    input[type="text"] {
+      user-select: text;
+    }
+
+    .multi-range {
+      position: relative;
+      height: 40px;
+      margin: 10px 0;
+    }
+
+    .multi-range input[type=range]:nth-child(1)::-webkit-slider-thumb::before {
+      background-color: #808080;
+    }
+
+    .multi-range input[type=range]:nth-child(2) {
+      background: none;
+    }
+
+    .multi-range input[type=range]:nth-child(2)::-webkit-slider-thumb::before {
+      background-color: #808080;
+    }
+
+    .multi-range input[type=range]::-moz-range-track {
+      background: none;
+    }
+
+    input[type=range] {
+      position: absolute;
+      width: 100%;
+      padding: 0;
+      margin: 0;
+      border: 0;
+      outline: none;
+      background: linear-gradient(#88f5c4, #88f5c4) no-repeat center;
+      background-size: 100% 2px;
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      appearance: none;
+      pointer-events: none;
+    }
+
+    input[type=range]:active,
+    input[type=range]:focus,
+    input[type=range]::-moz-focus-outer {
+      border: none;
+      outline: none;
+    }
+
+    input[type=range]::-moz-range-thumb {
+      position: relative;
+      height: 28px;
+      width: 28px;
+      margin: 5px 0;
+      border-radius: 50%;
+      background-color: #fff;
+      box-shadow: 0 1px 4px 0.5px rgba(0, 0, 0, 0.3);
+      -moz-appearance: none;
+      appearance: none;
+      pointer-events: all;
+    }
+
+    input[type=range]::-moz-range-thumb:hover {
+      background-color: #deddee;
+    }
+
+    input[type=range]::-moz-range-thumb:active {
+      background-color: #DFF3EA;
+    }
+
+    input[type=range]::-webkit-slider-thumb {
+      position: relative;
+      height: 28px;
+      width: 28px;
+      margin: 5px 0;
+      border-radius: 50%;
+      background-color: #fff;
+      box-shadow: 0 1px 4px 0.5px rgba(0, 0, 0, 0.3);
+      -webkit-appearance: none;
+      appearance: none;
+      pointer-events: all;
+    }
+
+    input[type=range]::-webkit-slider-thumb:hover {
+      background-color: #deddee;
+    }
+
+    input[type=range]::-webkit-slider-thumb:active {
+      background-color: #DFF3EA;
+    }
+
+    .filter-box {
+      width: 100%;
+      max-width: 600px;
+      padding: 20px;
+      background-color: #fff;
+      border-radius: 10px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+    .price{
+      font-size: 16px;
+      margin-top: 5px;
+    }
+    .find
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="navbar">
+      <a href="#" class="logo">HOUSELY</a>
+      <nav>
+        <ul>
+          <li>
+            <a href="#">ค้นหาจากห้อง <i class="fas fa-caret-down"></i></a>
+            <ul>
+              <li><a href="#">ห้องนอน</a></li>
+              <li><a href="#">ห้องนั่งเล่น</a></li>
+              <li><a href="#">ห้องครัว</a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="#">หมวดสินค้ายอดฮิต <i class="fas fa-caret-down"></i></a>
+            <ul>
+              <li><a href="#">โต๊ะ</a></li>
+              <li><a href="#">เก้าอี้</a></li>
+              <li><a href="#">ตู้เสื้อผ้า</a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="#">โปรโมชั่น <i class="fas fa-caret-down"></i></a>
+            <ul>
+              <li><a href="#">ส่วนลด 50%</a></li>
+              <li><a href="#">ซื้อ 1 แถม 1</a></li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <div class="search-bar">
+        <input type="text" placeholder="ค้นหาสินค้าที่คุณต้องการ..." />
+        <button type="submit"><i class="fas fa-search"></i></button>
       </div>
-    </header>
+      <div class="icons">
+        <a href="#"><i class="fas fa-heart"></i></a>
+        <a href="#"><i class="fas fa-shopping-cart"></i></a>
+        <a href="#"><i class="fas fa-user"></i></a>
+      </div>
+    </div>
+  </header>
 
-    <main>
-      <section class="all-product">
-        <div class="header-room">
-          <img
-            src="https://www.ikea.com/ext/ingkadam/m/b188de628d74f5b/original/PH199271.jpg"
-            alt="room-photo1"
-            class="room-img"
-          />
-          <div class="rightHead">
+  <main>
+    <section class="all-product">
+      <div class="header-room">
+        <img src="https://www.ikea.com/ext/ingkadam/m/b188de628d74f5b/original/PH199271.jpg" alt="room-photo1"
+          class="room-img" />
+        <div class="rightHead">
+          <div class="room-detail-container">
             <p class="room-detail">
-              Wake up, it’s time to sleep! There’s always so much you want to
+              Wake up, it's time to sleep! There's always so much you want to
               do. Yet switching off and sleeping helps you feel happier,
               healthier and more productive. Dive into a bed that lets you feel
               recharged and ready to power your dreams.
             </p>
-            <hr width="600px" style="margin: 10px 0" />
-            <div class="filter-box">
-              <h3>Filter by category</h3>
-              <div class="chips-container">
-                <input type="checkbox" onClick="toggle(this)" id="myCheckbox" />
-                <label for="myCheckbox" class="md-chip md-chip-clickable md-chip-hover">Select All</label>
-                
-                <input type="checkbox" class="item-checkbox" name="foo" value="bar1" id="1" />
-                <label for="1" class="md-chip md-chip-clickable md-chip-hover">Bedroom</label>
+          </div>
+          <hr class="custom-hr1" />
+          <div class="filter-box">
+            <h3>Filter by category</h3>
+            <div class="chips-container">
+              <input type="checkbox" onClick="toggle(this)" id="myCheckbox" />
+              <label for="myCheckbox" class="md-chip md-chip-clickable md-chip-hover">Select All</label>
 
-                <input type="checkbox" class="item-checkbox" name="foo" value="bar2" id="2" />
-                <label for="2" class="md-chip md-chip-clickable md-chip-hover">Living Room</label>
+              <input type="checkbox" class="item-checkbox" name="foo" value="bar1" id="1" />
+              <label for="1" class="md-chip md-chip-clickable md-chip-hover">Table</label>
 
-                <input type="checkbox" class="item-checkbox" name="foo" value="bar3" id="3" />
-                <label for="3" class="md-chip md-chip-clickable md-chip-hover">Kitchen</label>
+              <input type="checkbox" class="item-checkbox" name="foo" value="bar2" id="2" />
+              <label for="2" class="md-chip md-chip-clickable md-chip-hover">Bed</label>
 
-                <input type="checkbox" class="item-checkbox" name="foo" value="bar4" id="4" />
-                <label for="4" class="md-chip md-chip-clickable md-chip-hover">Bathroom</label>
+              <input type="checkbox" class="item-checkbox" name="foo" value="bar3" id="3" />
+              <label for="3" class="md-chip md-chip-clickable md-chip-hover">Wardrobes</label>
+
+              <input type="checkbox" class="item-checkbox" name="foo" value="bar4" id="4" />
+              <label for="4" class="md-chip md-chip-clickable md-chip-hover">Cabinet</label>
+            </div>
+
+            <div class="price-range">
+              <h3>Price Range</h3>
+              <div class="price">
+                <span id="from">100฿</span>-
+                <span id="to">100,000฿</span>
+              </div>
+              <div class="multi-range">
+                <input id="min" type="range" min="0" max="100" value="0" step="0.0001" />
+                <input id="max" type="range" min="0" max="100" value="100" step="0.0001" />
               </div>
             </div>
+            <button class="find-btn">Find!</button>
           </div>
         </div>
-
-        <h2>ห้องนอน</h2>
-        <hr class="custom-hr" />
-        <div class="product-list">
-          <!-- Repeat this block for each product -->
-          <div class="product">
-            <div class="product-image"></div>
-            <h3>ชื่อสินค้า</h3>
-            <p>20,000฿</p>
-            <div class="product-icons">
-              <a href="#"><i class="fas fa-heart"></i></a>
-              <a href="#">➤</a>
-            </div>
-          </div>
-          <!-- Repeat ends -->
-        </div>
-      </section>
-    </main>
-
-    <footer class="footer">
-      <p>ติดต่อเรา</p>
-      <p>Line: @housely</p>
-      <p>Customer Contact Center: 1112</p>
-      <div class="social-icons">
-        <a href="#"><i class="fab fa-line"></i></a>
-        <a href="#"><i class="fab fa-instagram"></i></a>
-        <a href="#"><i class="fab fa-facebook-f"></i></a>
       </div>
-    </footer>
-  </body>
-  <script>
-      function toggle(source) {
-        const checkboxes = document.querySelectorAll('.item-checkbox');
-        checkboxes.forEach((checkbox) => {
-          checkbox.checked = source.checked;
-        });
+
+      <h2>ห้องนอน</h2>
+      <hr class="custom-hr2" />
+      <div class="product-list">
+        <!-- Repeat this block for each product -->
+        <div class="product">
+          <div class="product-image"></div>
+          <h3>ชื่อสินค้า</h3>
+          <p>20,000฿</p>
+          <div class="product-icons">
+            <a href="#"><i class="fas fa-heart"></i></a>
+            <a href="#">➤</a>
+          </div>
+        </div>
+        <!-- Repeat ends -->
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>ติดต่อเรา</p>
+    <p>Line: @housely</p>
+    <p>Customer Contact Center: 1112</p>
+    <div class="social-icons">
+      <a href="#"><i class="fab fa-line"></i></a>
+      <a href="#"><i class="fab fa-instagram"></i></a>
+      <a href="#"><i class="fab fa-facebook-f"></i></a>
+    </div>
+  </footer>
+</body>
+<script>
+  function toggle(source) {
+    const checkboxes = document.querySelectorAll('.item-checkbox');
+    checkboxes.forEach((checkbox) => {
+      checkbox.checked = source.checked;
+    });
+  }
+
+  let minPrice = 100;
+  let maxPrice = 100000;
+
+  let minSlider = document.querySelector('#min');
+  let maxSlider = document.querySelector('#max');
+
+  function numberWithSpaces(number) {
+    return number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ' ');
+  }
+
+  function updateDollars() {
+    let fromValue = (maxPrice - minPrice) * minSlider.value / 100 + minPrice;
+    let toValue = (maxPrice - minPrice) * maxSlider.value / 100 + minPrice;
+
+    document.querySelector('#from').textContent = `${numberWithSpaces(Math.floor(fromValue))}฿`;
+    document.querySelector('#to').textContent = `${numberWithSpaces(Math.floor(toValue))}฿`;
+  }
+
+  maxSlider.addEventListener('input', () => {
+    let minValue = parseInt(minSlider.value);
+    let maxValue = parseInt(maxSlider.value);
+
+    if (maxValue < minValue + 1) {
+      minSlider.value = maxValue - 1;
+
+      if (minValue === parseInt(minSlider.min)) {
+        maxSlider.value = 1;
       }
-  </script>
+    }
+
+    updateDollars();
+  });
+
+  minSlider.addEventListener('input', () => {
+    let minValue = parseInt(minSlider.value);
+    let maxValue = parseInt(maxSlider.value);
+
+    if (minValue > maxValue - 1) {
+      maxSlider.value = minValue + 1;
+
+      if (maxValue === parseInt(maxSlider.max)) {
+        minSlider.value = parseInt(maxSlider.max) - 1;
+      }
+    }
+
+    updateDollars();
+  });
+</script>
+
 </html>
