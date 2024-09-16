@@ -64,6 +64,7 @@
         }
 
         .condetail h1 {
+            font-family: 'Anuphan', sans-serif;
             font-size: 30px;
             margin-bottom: 10px;
             margin-top: 50px;
@@ -77,29 +78,42 @@
         .item-controls {
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 10px; /* ระยะห่างระหว่างปุ่มและช่องกรอกข้อมูล */
+            margin: 5px 0; /* ระยะห่างบนและล่างของกล่องควบคุม */
             margin-bottom: 40px;
         }
 
         .item-controls input {
-            width: 40px;
-            text-align: center;
+            width: 35px; /* กำหนดความกว้างของช่องกรอกข้อมูล */
+            text-align: center; /* จัดข้อความให้อยู่ตรงกลางช่องกรอกข้อมูล */
+            padding: 5px; /* เพิ่มพื้นที่ภายในช่องกรอกข้อมูล */
+            border: 1px solid #ccc; /* เพิ่มขอบของช่องกรอกข้อมูล */
+            border-radius: 4px; /* ทำมุมของขอบเป็นโค้ง */
+            font-size: 14px; /* ขนาดของข้อความในช่องกรอกข้อมูล */
         }
 
         .item-controls button {
-            padding: 5px;
-            background-color: #f2f7f0;
-            border: none;
-            cursor: pointer;
-            border-radius: 4px;
+            padding: 4px 8px; /* เพิ่มพื้นที่ภายในปุ่ม (top-bottom และ left-right) */
+            background-color: #e7f3eb; /* สีพื้นหลังปุ่ม */
+            border: 1px solid #c1d7c7; /* ขอบของปุ่ม */
+            cursor: pointer; /* แสดงเคอร์เซอร์เป็นรูปมือเมื่อวางเมาส์เหนือปุ่ม */
+            border-radius: 4px; /* ทำมุมของขอบปุ่มเป็นโค้ง */
+            font-size: 16px; /* ขนาดของข้อความในปุ่ม */
+            transition: background-color 0.3s ease; /* เพิ่มการเปลี่ยนสีพื้นหลังเมื่อเมาส์ชี้ไปที่ปุ่ม */
+        }
+
+        .item-controls button:hover {
+            background-color: #d0e3d3; /* เปลี่ยนสีพื้นหลังของปุ่มเมื่อเมาส์ชี้ไปที่ปุ่ม */
         }
 
         .btn-container {
             display: flex;
             justify-content: space-between;
+            font-family: 'Anuphan',sans-serif;
         }
 
         .btn-container button {
+            font-family: 'Anuphan', sans-serif;
             width: 48%;
             font-weight: bold;
             padding: 10px 0;
@@ -352,6 +366,8 @@
             background-color: transparent;
         }
 
+
+
     </style>
 
 <body>
@@ -436,9 +452,9 @@
                 <p>179x112 ซม.</p>
                 <p class="bold-text">จำนวน</p>
                 <div class="item-controls">
-                    <button>-</button>
-                    <input type="text" value="0">
-                    <button>+</button>
+                    <button id="decrement">-</button>
+                    <input type="text" id="quantity" value="0">
+                    <button id="increment">+</button>
                 </div>
                 <div class="btn-container">
                     <button class="add">เพิ่มสินค้าลงตะกร้า</button>
@@ -553,8 +569,26 @@
                         item.scrollLeft -= containerWidth;
                     });
                 });
+
+                document.addEventListener('DOMContentLoaded', function () {
+                    const decrementButton = document.getElementById('decrement');
+                    const incrementButton = document.getElementById('increment');
+                    const quantityInput = document.getElementById('quantity');
+
+                    decrementButton.addEventListener('click', function () {
+                        let value = parseInt(quantityInput.value, 10);
+                        if (value > 0) {
+                            quantityInput.value = value - 1;
+                        }
+                    });
+
+                    incrementButton.addEventListener('click', function () {
+                        let value = parseInt(quantityInput.value, 10);
+                        quantityInput.value = value + 1;
+                    });
+                });
             </script>
-          <main></main>
+          
     </body>
 
 </html>
