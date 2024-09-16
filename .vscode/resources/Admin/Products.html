@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>การจัดการสินค้า</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Aboreto&family=Anuphan:wght@100..700&display=swap" />
+    <style>
+        body {
+            font-family: "Anuphan", sans-serif;
+            background-color: #f8f8f8;
+            font-size: 16px;
+            color: #333;
+        }
+        th.sortable {
+            cursor: pointer;
+        }
+        th.sortable:after {
+            content: ' \25B2'; /* default up arrow */
+        }
+        th.sortable.desc:after {
+            content: ' \25BC'; /* down arrow */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 style="margin: 30px 0;">รายการสินค้า</h1>
+        <a href="/admin/products/new" class="btn btn-primary mb-3">เพิ่มสินค้าใหม่</a>
+
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th class="sortable" onclick="sortTable(0)">ชื่อสินค้า</th>
+                    <th class="sortable" onclick="sortTable(1)">ราคา</th>
+                    <th class="sortable" onclick="sortTable(2)">จำนวนสต็อก</th>
+                    <th class="sortable" onclick="sortTable(3)">ประเภท</th>
+                    <th>รูปภาพ</th>
+                    <th class="sortable" onclick="sortTable(5)">สถานะ</th>
+                    <th>การดำเนินการ</th>
+                </tr>
+            </thead>
+            <tbody id="productTable">
+                <tr th:each="product : ${products}">
+                    <td th:text="${product.name}">ชื่อสินค้า</td>
+                    <td th:text="${product.price}">ราคา</td>
+                    <td th:text="${product.stockQuantity}">จำนวนสต็อก</td>
+                    <td th:text="${product.category.name}">ประเภท</td>
+                    <td><img th:src="@{${product.imageUrl}}" alt="รูปภาพสินค้า" style="width: 50px; height: 50px;" /></td>
+                    <td th:text="${product.status}">สถานะ</td>
+                    <td>
+                        <a th:href="@{'/admin/products/edit/' + ${product.id}}" class="btn btn-warning">แก้ไข</a>
+                        <a th:href="@{'/admin/products/delete/' + ${product.id}}" class="btn btn-danger">ลบ</a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <script>
+        let sortDirection = {};
+
+        function sortTable(columnIndex) {
+            const table = document.getElementById('productTable');
+            const rows = Array.from(table.querySelectorAll('tr'));
+            const isNumeric = columnIndex === 1 || columnIndex === 2; // ราคาและจำนวนสต็อกเป็นตัวเลข
+
+            if (!sortDirection[columnIndex]) {
+                sortDirection[columnIndex] = 'asc'; // ทิศทางเริ่มต้น
+            } else {
+                sortDirection[columnIndex] = sortDirection[columnIndex] === 'asc' ? 'desc' : 'asc';
+            }
+
+            rows.sort((a, b) => {
+                const aText = a.cells[columnIndex].innerText || a.cells[columnIndex].textContent;
+                const bText = b.cells[columnIndex].innerText || b.cells[columnIndex].textContent;
+
+                if (isNumeric) {
+                    return sortDirection[columnIndex] === 'asc'
+                        ? parseFloat(aText) - parseFloat(bText)
+                        : parseFloat(bText) - parseFloat(aText);
+                } else {
+                    return sortDirection[columnIndex] === 'asc'
+                        ? aText.localeCompare(bText)
+                        : bText.localeCompare(aText);
+                }
+            });
+
+            table.innerHTML = '';
+            rows.forEach(row => table.appendChild(row));
+
+            updateSortIcons(columnIndex);
+        }
+
+        function updateSortIcons(columnIndex) {
+            const headers = document.querySelectorAll('th.sortable');
+            headers.forEach((header, index) => {
+                if (index === columnIndex) {
+                    header.classList.toggle('desc', sortDirection[columnIndex] === 'desc');
+                } else {
+                    header.classList.remove('desc');
+                }
+            });
+        }
+    </script>
+</body>
+</html>
