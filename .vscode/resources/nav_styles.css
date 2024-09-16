@@ -22,6 +22,8 @@
     align-items: center;
     padding: 20px;
     background-color: #dff3ea;
+    position: relative;
+    z-index: 1000;
   }
 
   .logo {
@@ -61,6 +63,7 @@
     list-style: none;
     padding: 0;
     margin: 0;
+    z-index: 1001; 
   }
 
   /* Dropdown list items */

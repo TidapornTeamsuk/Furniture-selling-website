@@ -1,157 +1,281 @@
 <!DOCTYPE html>
 <html lang="th">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>ค้นหาจากห้อง - Housely</title>
     <!-- header -->
-    <link rel="stylesheet" href="nav_styles.css" /> 
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Aboreto&family=Anuphan:wght@100..700&display=swap"/>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"/>
+    <link rel="stylesheet" href="nav_styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Aboreto&family=Anuphan:wght@100..700&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
     <!-- footer -->
     <link rel="stylesheet" href="footer.css" />
     <style>
+      .all-product {
+        margin: 30px 30px 30px 30px;
+        padding: 30px;
+        text-align: left;
+      }
 
-        .all-product {
-            margin: 30px 30px 30px 30px;
-            padding: 30px;
-            text-align: left;
-        }
+      .all-product h2 {
+        font-size: 24px;
+        margin-bottom: 10px;
+      }
 
-        .all-product h2 {
-            font-size: 24px;
-            margin-bottom: 10px;
-        }
+      .custom-hr {
+        border: 0;
+        width: 8%;
+        height: 10px;
+        /* ความหนาของเส้น */
+        background: #b1cfd9;
+        /* สีของเส้น */
+        margin: 10px 0 10px 0;
+        /* ระยะห่างด้านบนและด้านล่าง */
+      }
 
-        .custom-hr {
-            border: 0;
-            height: 4px; /* ความหนาของเส้น */
-            background: #ccc; /* สีของเส้น */
-            margin: 20px 0; /* ระยะห่างด้านบนและด้านล่าง */
-        }
+      .product-list {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+      }
 
-        .product-list {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 20px;
-        }
+      .product {
+        background-color: white;
+        border-radius: 10px;
+        padding: 15px;
+        width: 300px;
+        height: 400px;
+        display: flex;
+        flex-direction: column;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        text-align: left;
+        margin-top: 10px;
+      }
 
-        .product {
-            background-color: white;
-            border-radius: 10px;
-            padding: 15px;
-            width: 300px;
-            height: 400px;
-            display: flex;
-            flex-direction: column;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-            text-align: left;
-        }
+      .product-image {
+        width: 100%;
+        height: 300px;
+        background-color: #eaeaea;
+        margin-bottom: 10px;
+      }
 
-        .product-image {
-            width: 100%;
-            height: 300px;
-            background-color: #eaeaea;
-            margin-bottom: 10px;
-        }
+      .product h3 {
+        font-size: 16px;
+        margin-bottom: 5px;
+        text-align: left;
+      }
 
-        .product h3 {
-            font-size: 16px;
-            margin-bottom: 5px;
-            text-align: left;
-        }
+      .product p {
+        font-size: 16px;
+        color: #333;
+      }
 
-        .product p {
-            font-size: 16px;
-            color: #333;
-        }
+      .product-icons {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 10px;
+      }
 
-        .product-icons {
-            display: flex;
-            justify-content: space-between;
-            margin-top: 10px;
-        }
+      .product-icons a {
+        text-decoration: none;
+        font-size: 18px;
+        color: #333;
+      }
 
-        .product-icons a {
-            text-decoration: none;
-            font-size: 18px;
-            color: #333;
-        }
+      .room-img {
+        width: 50%;
+        height: 50%;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+        margin-bottom: 20px;
+        border-radius: 5px;
+      }
+
+      .header-room {
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: flex-start;
+        gap: 50px;
+      }
+
+      .rightHead {
+        max-width: 600px;
+      }
+
+      .room-detail {
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+        line-height: 1.5;
+      }
+      h3{
+        font-size: 18px;
+      }
+      .md-chip {
+      display: inline-block;
+      background: #e0e0e0;
+      padding: 0 12px;
+      border-radius: 32px;
+      font-size: 13px;
+      height: 32px;
+      line-height: 32px;
+      cursor: pointer;
+      margin-right: 5px;
+    }
+
+    .md-chip:hover {
+      background: #ccc;
+      cursor: pointer;
+    }
+
+    .md-chip-selected {
+      background-color: #DFF3EA;
+      color: black;
+    }
+
+    .chips-container {
+      padding: 12px 0;
+    }
+
+    input[type="checkbox"] {
+      display: none;
+      cursor: default;
+    }
+
+    input[type="checkbox"]:checked + label {
+      background-color: #DFF3EA;
+      color: black;
+      transition: all 500ms ease;
+    }
+    body, .navbar, .search-bar, .icons, .all-product, .product, .footer {
+  user-select: none;
+}
+input[type="text"] {
+  user-select: text;
+}
     </style>
-</head>
-<body>
+  </head>
+
+  <body>
     <header>
-        <div class="navbar">
-            <a href="#" class="logo">HOUSELY</a>
-            <nav>
+      <div class="navbar">
+        <a href="#" class="logo">HOUSELY</a>
+        <nav>
+          <ul>
+            <li>
+              <a href="#">ค้นหาจากห้อง <i class="fas fa-caret-down"></i></a>
               <ul>
-                <li>
-                  <a href="#">ค้นหาจากห้อง <i class="fas fa-caret-down"></i></a>
-                  <ul>
-                    <li><a href="#">ห้องนอน</a></li>
-                    <li><a href="#">ห้องนั่งเล่น</a></li>
-                    <li><a href="#">ห้องครัว</a></li>
-                  </ul>
-                </li>
-                <li>
-                  <a href="#">หมวดสินค้ายอดฮิต <i class="fas fa-caret-down"></i></a>
-                  <ul>
-                    <li><a href="#">โต๊ะ</a></li>
-                    <li><a href="#">เก้าอี้</a></li>
-                    <li><a href="#">ตู้เสื้อผ้า</a></li>
-                  </ul>
-                </li>
-                <li>
-                  <a href="#">โปรโมชั่น <i class="fas fa-caret-down"></i></a>
-                  <ul>
-                    <li><a href="#">ส่วนลด 50%</a></li>
-                    <li><a href="#">ซื้อ 1 แถม 1</a></li>
-                  </ul>
-                </li>
+                <li><a href="#">ห้องนอน</a></li>
+                <li><a href="#">ห้องนั่งเล่น</a></li>
+                <li><a href="#">ห้องครัว</a></li>
               </ul>
-            </nav>
-            <div class="search-bar">
-              <input type="text" placeholder="ค้นหาสินค้าที่คุณต้องการ..." />
-              <button type="submit"><i class="fas fa-search"></i></button>
-            </div>
-            <div class="icons">
-              <a href="#"><i class="fas fa-heart"></i></a>
-              <a href="#"><i class="fas fa-shopping-cart"></i></a>
-              <a href="#"><i class="fas fa-user"></i></a>
-            </div>
-          </div>
+            </li>
+            <li>
+              <a href="#">หมวดสินค้ายอดฮิต <i class="fas fa-caret-down"></i></a>
+              <ul>
+                <li><a href="#">โต๊ะ</a></li>
+                <li><a href="#">เก้าอี้</a></li>
+                <li><a href="#">ตู้เสื้อผ้า</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="#">โปรโมชั่น <i class="fas fa-caret-down"></i></a>
+              <ul>
+                <li><a href="#">ส่วนลด 50%</a></li>
+                <li><a href="#">ซื้อ 1 แถม 1</a></li>
+              </ul>
+            </li>
+          </ul>
+        </nav>
+        <div class="search-bar">
+          <input type="text" placeholder="ค้นหาสินค้าที่คุณต้องการ..." />
+          <button type="submit"><i class="fas fa-search"></i></button>
+        </div>
+        <div class="icons">
+          <a href="#"><i class="fas fa-heart"></i></a>
+          <a href="#"><i class="fas fa-shopping-cart"></i></a>
+          <a href="#"><i class="fas fa-user"></i></a>
+        </div>
+      </div>
     </header>
 
     <main>
-        <section class="all-product">
-            <h2>ห้องนอน</h2>
-            <hr class="custom-hr">
-            <div class="product-list">
-                <!-- Repeat this block for each product -->
-                <div class="product">
-                    <div class="product-image"></div>
-                    <h3>ชื่อสินค้า</h3>
-                    <p>20,000฿</p>
-                    <div class="product-icons">
-                        <a href="#"><i class="fas fa-heart"></i></a>
-                        <a href="#">➤</a>
-                    </div>
-                </div>
-                <!-- Repeat ends -->
+      <section class="all-product">
+        <div class="header-room">
+          <img
+            src="https://www.ikea.com/ext/ingkadam/m/b188de628d74f5b/original/PH199271.jpg"
+            alt="room-photo1"
+            class="room-img"
+          />
+          <div class="rightHead">
+            <p class="room-detail">
+              Wake up, it’s time to sleep! There’s always so much you want to
+              do. Yet switching off and sleeping helps you feel happier,
+              healthier and more productive. Dive into a bed that lets you feel
+              recharged and ready to power your dreams.
+            </p>
+            <hr width="600px" style="margin: 10px 0" />
+            <div class="filter-box">
+              <h3>Filter by category</h3>
+              <div class="chips-container">
+                <input type="checkbox" onClick="toggle(this)" id="myCheckbox" />
+                <label for="myCheckbox" class="md-chip md-chip-clickable md-chip-hover">Select All</label>
+                
+                <input type="checkbox" class="item-checkbox" name="foo" value="bar1" id="1" />
+                <label for="1" class="md-chip md-chip-clickable md-chip-hover">Bedroom</label>
+
+                <input type="checkbox" class="item-checkbox" name="foo" value="bar2" id="2" />
+                <label for="2" class="md-chip md-chip-clickable md-chip-hover">Living Room</label>
+
+                <input type="checkbox" class="item-checkbox" name="foo" value="bar3" id="3" />
+                <label for="3" class="md-chip md-chip-clickable md-chip-hover">Kitchen</label>
+
+                <input type="checkbox" class="item-checkbox" name="foo" value="bar4" id="4" />
+                <label for="4" class="md-chip md-chip-clickable md-chip-hover">Bathroom</label>
+              </div>
             </div>
-        </section>
-    </main>  
+          </div>
+        </div>
+
+        <h2>ห้องนอน</h2>
+        <hr class="custom-hr" />
+        <div class="product-list">
+          <!-- Repeat this block for each product -->
+          <div class="product">
+            <div class="product-image"></div>
+            <h3>ชื่อสินค้า</h3>
+            <p>20,000฿</p>
+            <div class="product-icons">
+              <a href="#"><i class="fas fa-heart"></i></a>
+              <a href="#">➤</a>
+            </div>
+          </div>
+          <!-- Repeat ends -->
+        </div>
+      </section>
+    </main>
 
     <footer class="footer">
       <p>ติดต่อเรา</p>
       <p>Line: @housely</p>
       <p>Customer Contact Center: 1112</p>
       <div class="social-icons">
-          <a href="#"><i class="fab fa-line"></i></a>
-          <a href="#"><i class="fab fa-instagram"></i></a>
-          <a href="#"><i class="fab fa-facebook-f"></i></a>
+        <a href="#"><i class="fab fa-line"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-facebook-f"></i></a>
       </div>
     </footer>
-
-</body>
+  </body>
+  <script>
+      function toggle(source) {
+        const checkboxes = document.querySelectorAll('.item-checkbox');
+        checkboxes.forEach((checkbox) => {
+          checkbox.checked = source.checked;
+        });
+      }
+  </script>
 </html>
