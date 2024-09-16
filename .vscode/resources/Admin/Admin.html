@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>จัดการผู้ใช้</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Aboreto&family=Anuphan:wght@100..700&display=swap" />
+    <style>
+        body {
+            font-family: "Anuphan", sans-serif;
+            background-color: #f8f8f8;
+            font-size: 16px;
+            color: #333;
+        }
+        .btn-custom {
+            background-color: #007bff;
+            color: white;
+        }
+        .btn-custom:hover {
+            background-color: #0056b3;
+        }
+        .table th, .table td {
+            vertical-align: middle;
+        }
+        .table img {
+            width: 50px;
+            height: 50px;
+            object-fit: cover;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 style="margin: 30px 0;">จัดการผู้ใช้</h1>
+        <a href="/admin/users/new" class="btn btn-primary mb-3">เพิ่มผู้ดูแลระบบใหม่</a>
+
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>ชื่อผู้ใช้</th>
+                    <th>บทบาท</th>
+                    <th>การดำเนินการ</th>
+                </tr>
+            </thead>
+            <tbody id="userTable">
+                <tr th:each="user : ${users}">
+                    <td th:text="${user.username}">ชื่อผู้ใช้</td>
+                    <td th:text="${user.role}">บทบาท</td>
+                    <td>
+                        <a th:href="@{'/admin/users/edit/' + ${user.id}}" class="btn btn-warning">แก้ไข</a>
+                        <a th:href="@{'/admin/users/delete/' + ${user.id}}" class="btn btn-danger">ลบ</a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</body>
+</html>
