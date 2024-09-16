@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
+
 <head>
     <title>แก้ไขสินค้า</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
@@ -21,7 +22,6 @@
         .form-control, .form-control-file {
             border-radius: 5px;
         }
-
         .btn-custom {
             background-color: #007bff;
             color: white;
@@ -31,6 +31,7 @@
         }
     </style>
 </head>
+
 <body>
     <div class="container form-container">
         <h1 class="text-center">แก้ไขสินค้า</h1>
@@ -38,6 +39,12 @@
         <form th:action="@{/admin/products}" th:object="${product}" method="post" enctype="multipart/form-data">
             <!-- Hidden field for the product ID -->
             <input type="hidden" th:field="*{id}"/>
+
+            <!-- New field for Product Code -->
+            <div class="form-group">
+                <label for="productCode">รหัสสินค้า:</label>
+                <input type="text" id="productCode" th:field="*{productCode}" class="form-control" required/>
+            </div>
 
             <div class="form-group">
                 <label for="name">ชื่อสินค้า:</label>
@@ -100,4 +107,5 @@
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
+
 </html>

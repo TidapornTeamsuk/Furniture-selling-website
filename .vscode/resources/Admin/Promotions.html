@@ -3,8 +3,7 @@
 <head>
     <title>โปรโมชั่น</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <link rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Aboreto&family=Anuphan:wght@100..700&display=swap" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Aboreto&family=Anuphan:wght@100..700&display=swap" />
     <style>
         body {
             font-family: "Anuphan", sans-serif;
@@ -19,6 +18,11 @@
         .btn-custom:hover {
             background-color: #0056b3;
         }
+        .search-input {
+            margin-bottom: 20px;
+            width: 100%;
+            max-width: 300px;
+        }
     </style>
 </head>
 <body>
@@ -26,6 +30,8 @@
         <h1 style="margin: 30px 0;">จัดการโปรโมชั่น</h1>
 
         <a href="/admin/promotions/new" class="btn btn-primary mb-3">เพิ่มโปรโมชั่นใหม่</a>
+
+        <input type="text" id="searchInput" class="form-control search-input" placeholder="ค้นหาโปรโมชั่น..." onkeyup="filterTable()">
 
         <table class="table table-striped">
             <thead>
@@ -38,7 +44,7 @@
                     <th>การดำเนินการ</th>
                 </tr>
             </thead>
-            <tbody>
+            <tbody id="promotionTable">
                 <tr th:each="promotion : ${promotions}">
                     <td th:text="${promotion.name}">Promotion Name</td>
                     <td th:text="${promotion.code}">Discount Code</td>
@@ -57,5 +63,28 @@
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <script>
+        function filterTable() {
+            const searchTerm = document.getElementById('searchInput').value.toLowerCase();
+            const table = document.getElementById('promotionTable');
+            const rows = table.querySelectorAll('tr');
+
+            rows.forEach(row => {
+                const cells = row.getElementsByTagName('td');
+                let rowVisible = false;
+                
+                for (let i = 0; i < cells.length; i++) {
+                    const cell = cells[i];
+                    if (cell.innerText.toLowerCase().includes(searchTerm)) {
+                        rowVisible = true;
+                        break;
+                    }
+                }
+
+                row.style.display = rowVisible ? '' : 'none';
+            });
+        }
+    </script>
 </body>
 </html>
