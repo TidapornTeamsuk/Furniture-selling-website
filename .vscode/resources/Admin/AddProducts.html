@@ -2,10 +2,9 @@
 <html xmlns:th="http://www.thymeleaf.org">
 
 <head>
-    <title>แก้ไขสินค้า</title>
+    <title>เพิ่มสินค้า</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <link rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Aboreto&family=Anuphan:wght@100..700&display=swap" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Aboreto&family=Anuphan:wght@100..700&display=swap" />
     <style>
         body {
             font-family: "Anuphan", sans-serif;
@@ -25,11 +24,6 @@
         .form-control-file {
             border-radius: 5px;
         }
-
-        .form-group label {
-            font-weight: bold;
-        }
-
         .btn-custom {
             background-color: #007bff;
             color: white;
@@ -78,6 +72,15 @@
             </div>
 
             <div class="form-group">
+                <label for="promotion">โปรโมชัน:</label>
+                <select id="promotion" th:field="*{promotion.id}" class="form-control">
+                    <option value="" th:text="'ไม่มีโปรโมชัน'">ไม่มีโปรโมชัน</option>
+                    <option th:each="promotion : ${promotions}" th:value="${promotion.id}" th:text="${promotion.name}">
+                    </option>
+                </select>
+            </div>
+
+            <div class="form-group">
                 <label for="image">รูปภาพสินค้า:</label>
                 <input type="file" id="image" th:field="*{image}" class="form-control-file" />
                 <div th:if="${product.imageUrl}" class="mt-2">
@@ -90,8 +93,7 @@
                 <select id="status" th:field="*{status}" class="form-control" required>
                     <option value="AVAILABLE" th:selected="${product.status == 'AVAILABLE'}">พร้อมขาย</option>
                     <option value="OUT_OF_STOCK" th:selected="${product.status == 'OUT_OF_STOCK'}">หมดสต็อก</option>
-                    <option value="NOT_AVAILABLE" th:selected="${product.status == 'NOT_AVAILABLE'}">ไม่พร้อมขาย
-                    </option>
+                    <option value="NOT_AVAILABLE" th:selected="${product.status == 'NOT_AVAILABLE'}">ไม่พร้อมขาย</option>
                 </select>
             </div>
 

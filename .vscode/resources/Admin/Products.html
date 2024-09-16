@@ -3,8 +3,7 @@
 <head>
     <title>การจัดการสินค้า</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-    <link rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Aboreto&family=Anuphan:wght@100..700&display=swap" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Aboreto&family=Anuphan:wght@100..700&display=swap" />
     <style>
         body {
             font-family: "Anuphan", sans-serif;
@@ -17,6 +16,7 @@
         }
         th.sortable:after {
             content: ' \25B2'; /* default up arrow */
+            font-size: 0.7em; /* reduce the size of the arrow */
         }
         th.sortable.desc:after {
             content: ' \25BC'; /* down arrow */
@@ -35,8 +35,9 @@
                     <th class="sortable" onclick="sortTable(1)">ราคา</th>
                     <th class="sortable" onclick="sortTable(2)">จำนวนสต็อก</th>
                     <th class="sortable" onclick="sortTable(3)">ประเภท</th>
+                    <th class="sortable" onclick="sortTable(4)">โปรโมชัน</th> <!-- New Column for Promotion -->
                     <th>รูปภาพ</th>
-                    <th class="sortable" onclick="sortTable(5)">สถานะ</th>
+                    <th class="sortable" onclick="sortTable(6)">สถานะ</th>
                     <th>การดำเนินการ</th>
                 </tr>
             </thead>
@@ -46,6 +47,7 @@
                     <td th:text="${product.price}">ราคา</td>
                     <td th:text="${product.stockQuantity}">จำนวนสต็อก</td>
                     <td th:text="${product.category.name}">ประเภท</td>
+                    <td th:text="${product.promotion.name}">โปรโมชัน</td> <!-- Display Promotion -->
                     <td><img th:src="@{${product.imageUrl}}" alt="รูปภาพสินค้า" style="width: 50px; height: 50px;" /></td>
                     <td th:text="${product.status}">สถานะ</td>
                     <td>

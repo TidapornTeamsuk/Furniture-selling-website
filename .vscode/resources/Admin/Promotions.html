@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>โปรโมชั่น</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Aboreto&family=Anuphan:wght@100..700&display=swap" />
+    <style>
+        body {
+            font-family: "Anuphan", sans-serif;
+            background-color: #f8f8f8;
+            font-size: 16px;
+            color: #333;
+        }
+        .btn-custom {
+            background-color: #007bff;
+            color: white;
+        }
+        .btn-custom:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container promotion-container">
+        <h1 style="margin: 30px 0;">จัดการโปรโมชั่น</h1>
+
+        <a href="/admin/promotions/new" class="btn btn-primary mb-3">เพิ่มโปรโมชั่นใหม่</a>
+
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>ชื่อโปรโมชั่น</th>
+                    <th>รหัสส่วนลด</th>
+                    <th>เปอร์เซ็นต์ส่วนลด</th>
+                    <th>วันเริ่มต้น</th>
+                    <th>วันสิ้นสุด</th>
+                    <th>การดำเนินการ</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="promotion : ${promotions}">
+                    <td th:text="${promotion.name}">Promotion Name</td>
+                    <td th:text="${promotion.code}">Discount Code</td>
+                    <td th:text="${promotion.percent}">Discount Percent</td>
+                    <td th:text="${promotion.startDate}">Start Date</td>
+                    <td th:text="${promotion.endDate}">End Date</td>
+                    <td>
+                        <a th:href="@{'/admin/promotions/edit/' + ${promotion.id}}" class="btn btn-warning">แก้ไข</a>
+                        <a th:href="@{'/admin/promotions/delete/' + ${promotion.id}}" class="btn btn-danger">ลบ</a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
