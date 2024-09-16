@@ -42,17 +42,17 @@
   nav ul li {
     position: relative;
     font-size: 14px;
-  }
+}
 
-  nav ul li a {
+nav ul li a {
     text-decoration: none;
     color: #333;
     padding: 10px;
     display: block;
-  }
+}
 
-  /* Dropdown container */
-  nav ul li ul {
+/* Mega Menu container */
+nav ul li ul {
     position: absolute;
     top: 100%;
     left: 0;
@@ -61,25 +61,38 @@
     border-radius: 4px;
     display: none;
     list-style: none;
+    padding: 20px;
+    margin: 0;
+    z-index: 1001;
+    width: 600px; /* Mega menu width */
+}
+
+/* Mega Menu columns */
+nav ul li ul li {
+    width: auto;
+    float: left;
+    padding-right: 40px;
+}
+
+nav ul li ul li a {
+    padding: 10px 0;
+    color: #333;
+    font-size: 14px;
+}
+
+/* Show mega menu when hovering on the parent */
+nav ul li:hover ul {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+/* Reset list-style for the inner links */
+nav ul li ul li ul {
     padding: 0;
     margin: 0;
-    z-index: 1001; 
-  }
+    list-style: none;
+}
 
-  /* Dropdown list items */
-  nav ul li ul li {
-    width: 150px; /* ปรับขนาดตามที่ต้องการ */
-  }
-
-  nav ul li ul li a {
-    padding: 10px;
-    color: #333;
-  }
-
-  /* Show dropdown when hovering on the parent */
-  nav ul li:hover ul {
-    display: block;
-  }
 
   .search-bar {
     display: flex;
