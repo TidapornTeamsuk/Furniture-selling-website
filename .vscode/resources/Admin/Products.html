@@ -27,13 +27,6 @@
         .search-input {
             margin-right: 10px;
         }
-        .filter-select-container {
-            display: flex;
-            justify-content: flex-end; /* จัดตำแหน่งชิดขวา */
-        }
-        .filter-select {
-            width: 200px; /* ปรับขนาดความกว้างตามที่ต้องการ */
-        }
     </style>
 </head>
 <body>
@@ -44,14 +37,6 @@
         <div class="row search-filter-container">
             <div class="col-md-6">
                 <input type="text" id="searchInput" class="form-control search-input" placeholder="ค้นหาสินค้า..." onkeyup="filterTable()">
-            </div>
-            <div class="col-md-6 filter-select-container">
-                <select id="promotionFilter" class="form-control filter-select" onchange="filterTable()">
-                    <option value="">เลือกโปรโมชัน</option>
-                    <option value="โปรโมชั่น1">โปรโมชั่น1</option>
-                    <option value="โปรโมชั่น2">โปรโมชั่น2</option>
-                    <!-- เพิ่มตัวเลือกโปรโมชันตามที่มีในระบบ -->
-                </select>
             </div>
         </div>
 
