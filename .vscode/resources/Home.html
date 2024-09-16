@@ -11,6 +11,8 @@
         rel="stylesheet" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
     <link rel="stylesheet" href="nav_styles.css" />
+    <!-- footer -->
+    <link rel="stylesheet" href="footer.css" />
     <style>
         html,
         body {
@@ -355,26 +357,6 @@
             background-color: transparent;
         }
 
-        .footer {
-            margin-top: 80px;
-            background-color: #d4efe0;
-            padding: 20px;
-            text-align: center;
-            width: 100%;
-        }
-
-        .footer p {
-            margin-bottom: 10px;
-            font-size: 14px;
-        }
-
-        .footer .social-icons a {
-            margin: 0 10px;
-            text-decoration: none;
-            font-size: 18px;
-            color: #333;
-        }
-
         /* ยังคง CSS เดิมทั้งหมด และเพิ่มส่วนนี้ที่ด้านล่างของ CSS */
 
         html,
@@ -583,25 +565,6 @@
                 </div>
 
             </div>
-            <script>
-                const productContainers = [...document.querySelectorAll('.hotpd-gallery')];
-                const nxtBtn = [...document.querySelectorAll('.nxt-btn')];
-                const preBtn = [...document.querySelectorAll('.pre-btn')];
-
-                productContainers.forEach((item, i) => {
-                    let containerDimensions = item.getBoundingClientRect();
-                    let containerWidth = containerDimensions.width / 4; // แบ่งพื้นที่เพื่อให้เลื่อนทีละ 4 สินค้า
-
-                    nxtBtn[i].addEventListener('click', () => {
-                        item.scrollLeft += containerWidth;
-                    });
-
-                    preBtn[i].addEventListener('click', () => {
-                        item.scrollLeft -= containerWidth;
-                    });
-                });
-
-            </script>
     </body>
     <main></main>
 </body>
@@ -615,5 +578,24 @@
         <a href="#"><i class="fab fa-facebook-f"></i></a>
     </div>
 </footer>
+<script>
+    const productContainers = [...document.querySelectorAll('.hotpd-gallery')];
+    const nxtBtn = [...document.querySelectorAll('.nxt-btn')];
+    const preBtn = [...document.querySelectorAll('.pre-btn')];
+
+    productContainers.forEach((item, i) => {
+        let containerDimensions = item.getBoundingClientRect();
+        let containerWidth = containerDimensions.width / 4; // แบ่งพื้นที่เพื่อให้เลื่อนทีละ 4 สินค้า
+
+        nxtBtn[i].addEventListener('click', () => {
+            item.scrollLeft += containerWidth;
+        });
+
+        preBtn[i].addEventListener('click', () => {
+            item.scrollLeft -= containerWidth;
+        });
+    });
+
+</script>
 
 </html>
