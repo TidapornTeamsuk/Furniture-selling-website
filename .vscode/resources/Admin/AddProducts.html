@@ -2,10 +2,9 @@
 <html xmlns:th="http://www.thymeleaf.org">
 
 <head>
-    <title>แก้ไขสินค้า</title>
+    <title>เพิ่มสินค้า</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <link rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Aboreto&family=Anuphan:wght@100..700&display=swap" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Aboreto&family=Anuphan:wght@100..700&display=swap" />
     <style>
         body {
             font-family: "Anuphan", sans-serif;
@@ -20,21 +19,14 @@
             border-radius: 10px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
-
         .form-control,
         .form-control-file {
             border-radius: 5px;
         }
-
-        .form-group label {
-            font-weight: bold;
-        }
-
         .btn-custom {
             background-color: #007bff;
             color: white;
         }
-
         .btn-custom:hover {
             background-color: #0056b3;
         }
@@ -48,6 +40,11 @@
         <form th:action="@{/admin/products}" th:object="${product}" method="post" enctype="multipart/form-data">
             <!-- ถ้าเป็นการแก้ไขสินค้าจะต้องมีการส่ง ID ของสินค้า -->
             <input type="hidden" th:field="*{id}" />
+
+            <div class="form-group">
+                <label for="code">รหัสสินค้า:</label>
+                <input type="text" id="code" th:field="*{code}" class="form-control" required />
+            </div>
 
             <div class="form-group">
                 <label for="name">ชื่อสินค้า:</label>
@@ -72,8 +69,15 @@
             <div class="form-group">
                 <label for="category">ประเภทสินค้า:</label>
                 <select id="category" th:field="*{category.id}" class="form-control" required>
-                    <option th:each="category : ${categories}" th:value="${category.id}" th:text="${category.name}">
-                    </option>
+                    <option th:each="category : ${categories}" th:value="${category.id}" th:text="${category.name}"></option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="promotion">โปรโมชัน:</label>
+                <select id="promotion" th:field="*{promotion.id}" class="form-control">
+                    <option value="" th:text="'ไม่มีโปรโมชัน'">ไม่มีโปรโมชัน</option>
+                    <option th:each="promotion : ${promotions}" th:value="${promotion.id}" th:text="${promotion.name}"></option>
                 </select>
             </div>
 
@@ -90,8 +94,7 @@
                 <select id="status" th:field="*{status}" class="form-control" required>
                     <option value="AVAILABLE" th:selected="${product.status == 'AVAILABLE'}">พร้อมขาย</option>
                     <option value="OUT_OF_STOCK" th:selected="${product.status == 'OUT_OF_STOCK'}">หมดสต็อก</option>
-                    <option value="NOT_AVAILABLE" th:selected="${product.status == 'NOT_AVAILABLE'}">ไม่พร้อมขาย
-                    </option>
+                    <option value="NOT_AVAILABLE" th:selected="${product.status == 'NOT_AVAILABLE'}">ไม่พร้อมขาย</option>
                 </select>
             </div>
 

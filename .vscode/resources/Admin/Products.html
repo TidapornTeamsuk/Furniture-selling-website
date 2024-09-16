@@ -3,8 +3,7 @@
 <head>
     <title>การจัดการสินค้า</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-    <link rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Aboreto&family=Anuphan:wght@100..700&display=swap" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Aboreto&family=Anuphan:wght@100..700&display=swap" />
     <style>
         body {
             font-family: "Anuphan", sans-serif;
@@ -22,6 +21,12 @@
         th.sortable.desc:after {
             content: ' \25BC'; /* down arrow */
         }
+        .search-filter-container {
+            margin-bottom: 20px;
+        }
+        .search-input {
+            margin-right: 10px;
+        }
     </style>
 </head>
 <body>
@@ -29,24 +34,34 @@
         <h1 style="margin: 30px 0;">รายการสินค้า</h1>
         <a href="/admin/products/new" class="btn btn-primary mb-3">เพิ่มสินค้าใหม่</a>
 
+        <div class="row search-filter-container">
+            <div class="col-md-6">
+                <input type="text" id="searchInput" class="form-control search-input" placeholder="ค้นหาสินค้า..." onkeyup="filterTable()">
+            </div>
+        </div>
+
         <table class="table table-striped">
             <thead>
                 <tr>
-                    <th class="sortable" onclick="sortTable(0)">ชื่อสินค้า</th>
-                    <th class="sortable" onclick="sortTable(1)">ราคา</th>
-                    <th class="sortable" onclick="sortTable(2)">จำนวนสต็อก</th>
-                    <th class="sortable" onclick="sortTable(3)">ประเภท</th>
+                    <th class="sortable" onclick="sortTable(0)">รหัสสินค้า</th>
+                    <th class="sortable" onclick="sortTable(1)">ชื่อสินค้า</th>
+                    <th class="sortable" onclick="sortTable(2)">ราคา</th>
+                    <th class="sortable" onclick="sortTable(3)">จำนวนสต็อก</th>
+                    <th class="sortable" onclick="sortTable(4)">ประเภท</th>
+                    <th class="sortable" onclick="sortTable(5)">โปรโมชัน</th>
                     <th>รูปภาพ</th>
-                    <th class="sortable" onclick="sortTable(5)">สถานะ</th>
+                    <th class="sortable" onclick="sortTable(7)">สถานะ</th>
                     <th>การดำเนินการ</th>
                 </tr>
             </thead>
             <tbody id="productTable">
                 <tr th:each="product : ${products}">
+                    <td th:text="${product.code}">รหัสสินค้า</td>
                     <td th:text="${product.name}">ชื่อสินค้า</td>
                     <td th:text="${product.price}">ราคา</td>
                     <td th:text="${product.stockQuantity}">จำนวนสต็อก</td>
                     <td th:text="${product.category.name}">ประเภท</td>
+                    <td th:text="${product.promotion.name}">โปรโมชัน</td>
                     <td><img th:src="@{${product.imageUrl}}" alt="รูปภาพสินค้า" style="width: 50px; height: 50px;" /></td>
                     <td th:text="${product.status}">สถานะ</td>
                     <td>
@@ -64,7 +79,7 @@
         function sortTable(columnIndex) {
             const table = document.getElementById('productTable');
             const rows = Array.from(table.querySelectorAll('tr'));
-            const isNumeric = columnIndex === 1 || columnIndex === 2; // ราคาและจำนวนสต็อกเป็นตัวเลข
+            const isNumeric = columnIndex === 2 || columnIndex === 3; // ราคาและจำนวนสต็อกเป็นตัวเลข
 
             if (!sortDirection[columnIndex]) {
                 sortDirection[columnIndex] = 'asc'; // ทิศทางเริ่มต้น
@@ -101,6 +116,29 @@
                 } else {
                     header.classList.remove('desc');
                 }
+            });
+        }
+
+        function filterTable() {
+            const searchTerm = document.getElementById('searchInput').value.toLowerCase();
+            const promotionFilter = document.getElementById('promotionFilter').value.toLowerCase();
+            const table = document.getElementById('productTable');
+            const rows = table.querySelectorAll('tr');
+
+            rows.forEach(row => {
+                const cells = row.getElementsByTagName('td');
+                let rowVisible = false;
+
+                for (let i = 0; i < cells.length; i++) {
+                    const cell = cells[i];
+                    if (cell.innerText.toLowerCase().includes(searchTerm) &&
+                        (promotionFilter === '' || cell.innerText.toLowerCase() === promotionFilter)) {
+                        rowVisible = true;
+                        break;
+                    }
+                }
+
+                row.style.display = rowVisible ? '' : 'none';
             });
         }
     </script>
