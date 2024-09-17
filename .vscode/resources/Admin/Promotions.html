@@ -1,51 +1,121 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html lang="th">
+
 <head>
-    <title>โปรโมชั่น</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Aboreto&family=Anuphan:wght@100..700&display=swap" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>การจัดการโปรโมชั่น</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Aboreto&family=Anuphan:wght@100..700&display=swap"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.0.3/dist/tailwind.min.css"/>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"/>
     <style>
         body {
             font-family: "Anuphan", sans-serif;
-            background-color: #f8f8f8;
+            background-color: #ffffff;
             font-size: 16px;
             color: #333;
         }
+
         .btn-custom {
             background-color: #007bff;
             color: white;
         }
+
         .btn-custom:hover {
             background-color: #0056b3;
         }
-        .search-input {
+
+        .search-filter-container {
             margin-bottom: 20px;
-            width: 100%;
-            max-width: 300px;
         }
+
+        .search-input {
+            margin-right: 10px;
+        }
+
+        table.table-striped {
+            border-collapse: separate;
+            border-spacing: 0;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        table.table-striped thead {
+            background-color: #007bff;
+            color: #ffffff;
+        }
+
+        table.table-striped thead th {
+            padding: 12px;
+        }
+
+        table.table-striped tbody tr:nth-child(even) {
+            background-color: #e9ecef;
+        }
+
+        table.table-striped td {
+            padding: 12px;
+        }
+
+        table.table-striped tbody tr.table-row{
+            background-color: #ffffff;
+        }
+        
+        table.table-striped tbody tr:hover {
+            background-color: #e2e8f0;
+            transition: background-color 0.3s ease;
+        }
+
     </style>
 </head>
+
 <body>
-    <div class="container promotion-container">
-        <h1 style="margin: 30px 0;">จัดการโปรโมชั่น</h1>
+    <div class="container mx-auto p-4">
 
-        <a href="/admin/promotions/new" class="btn btn-primary mb-3">เพิ่มโปรโมชั่นใหม่</a>
+        <div class="flex justify-between items-center mb-6">
+            <h1 class="text-3xl font-bold" style="margin-top: 30px; font-size: 1.8rem; font-weight: bold;">
+                รายการโปรโมชัน</h1>
+            <a href="/admin" class="text-blue-500 hover:text-blue-700 font-semibold">
+                <i class="fas fa-arrow-left h-5 w-5"></i> กลับสู่หน้าแดชบอร์ด
+            </a>
+        </div>
 
-        <input type="text" id="searchInput" class="form-control search-input" placeholder="ค้นหาโปรโมชั่น..." onkeyup="filterTable()">
+        <!-- <a href="/admin/promotions/new" class="btn btn-primary mb-3">เพิ่มโปรโมชันใหม่</a> -->
+        <div class="flex justify-end mb-4">
+            <a href="#addProductModal" data-modal-target="addCategoryModal"
+                class="bg-green-500 text-white px-4 py-2 rounded-lg shadow-md hover:bg-green-600 transition-colors">
+                <i class="fas fa-plus h-5 w-5 mr-2"></i> เพิ่มโปรโมชันใหม่
+            </a>
+        </div>
+
+        <div class="row search-filter-container">
+            <div class="col-md-6">
+                <div class="input-group">
+                    <span class="input-group-text">
+                        <i class="fas fa-search"></i>
+                    </span>
+                    <input type="text" id="searchInput" class="form-control search-input" placeholder="ค้นหาโปรโมชัน..."
+                        onkeyup="filterTable()">
+                </div>
+            </div>
+        </div>
 
         <table class="table table-striped">
             <thead>
                 <tr>
-                    <th>ชื่อโปรโมชั่น</th>
-                    <th>รหัสส่วนลด</th>
-                    <th>เปอร์เซ็นต์ส่วนลด</th>
-                    <th>วันเริ่มต้น</th>
-                    <th>วันสิ้นสุด</th>
-                    <th>การดำเนินการ</th>
+                    <th class="sortable px-6 py-3 text-left text-l font-medium text-white uppercase tracking-wider">ชื่อโปรโมชั่น</th>
+                    <th class="sortable px-6 py-3 text-left text-l font-medium text-white uppercase tracking-wider">รหัสส่วนลด</th>
+                    <th class="sortable px-6 py-3 text-left text-l font-medium text-white uppercase tracking-wider">เปอร์เซ็นต์ส่วนลด</th>
+                    <th class="sortable px-6 py-3 text-left text-l font-medium text-white uppercase tracking-wider">วันเริ่มต้น</th>
+                    <th class="sortable px-6 py-3 text-left text-l font-medium text-white uppercase tracking-wider">วันสิ้นสุด</th>
+                    <th class="sortable px-6 py-3 text-left text-l font-medium text-white uppercase tracking-wider">การดำเนินการ</th>
                 </tr>
             </thead>
-            <tbody id="promotionTable">
-                <tr th:each="promotion : ${promotions}">
+            <tbody class="bg-white divide-y divide-gray-200" id="promotionTable">
+                <tr class="table-row" th:each="promotion : ${promotions}">
                     <td th:text="${promotion.name}">Promotion Name</td>
                     <td th:text="${promotion.code}">Discount Code</td>
                     <td th:text="${promotion.percent}">Discount Percent</td>
@@ -73,7 +143,7 @@
             rows.forEach(row => {
                 const cells = row.getElementsByTagName('td');
                 let rowVisible = false;
-                
+
                 for (let i = 0; i < cells.length; i++) {
                     const cell = cells[i];
                     if (cell.innerText.toLowerCase().includes(searchTerm)) {
@@ -87,4 +157,5 @@
         }
     </script>
 </body>
+
 </html>
