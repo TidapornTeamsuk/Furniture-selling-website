@@ -253,6 +253,45 @@
             background-color: #e6f2ff;
         }
 
+        .credit-card-form {
+            display: none; /* Initially hidden */
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .credit-card-form h3 {
+            margin-bottom: 15px;
+        }
+
+        .credit-card-form label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        .credit-card-form input {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+
+        .credit-card-form button {
+            background-color: #0066cc;
+            color: white;
+            border: none;
+            padding: 10px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .credit-card-form button:hover {
+            background-color: #0058a3;
+        }
+
     </style>
 </head>
 <body>
@@ -270,39 +309,64 @@
                         </div>
                         <span class="separator">-</span>
                         <div class="icon-item">
-                            <div class="icon" style="color: #fff; background-color: #0066cc;">
-                                <i class="fas fa-truck"></i>
+                            <div class="icon" style="color: #0066cc;">
+                                <i class="fas fa-check"></i>
                             </div>
                             <span class="icon-text">บริการ</span>
                         </div>
                         <span class="separator">-</span>
                         <div class="icon-item">
-                            <div class="icon">
+                            <div class="icon" style="background-color:#0066cc; color:#fff;">
                                 <i class="far fa-credit-card"></i>
                             </div>
                             <span class="icon-text">การชำระเงิน</span>
                         </div>
                 </div>
             </div>
-            <div class="address-section">
-                <h2>คุณต้องการรับคำสั่งซื้อของคุณด้วยวิธีใด?</h2>
-                
 
-                <div class="option">
+            <div id="credit-card-form" class="credit-card-form">
+                <h3>กรอกรายละเอียดบัตรเครดิต</h3>
+                <form>
+                    <label for="card-name">ชื่อบนบัตร</label>
+                    <input type="text" id="card-name" name="card-name">
+
+                    <label for="card-number">หมายเลขบัตร</label>
+                    <input type="text" id="card-number" name="card-number">
+
+                    <label for="card-expiry">วันหมดอายุ</label>
+                    <input type="text" id="card-expiry" name="card-expiry">
+
+                    <label for="card-cvc">CVC</label>
+                    <input type="text" id="card-cvc" name="card-cvc">
+
+                    <button type="submit">ยืนยันการชำระเงิน</button>
+                </form>
+            </div>
+
+            <div class="address-section">
+                <h2>คุณต้องการชำระเงินด้วยวิธีใด?</h2>
+                
+                <div class="option" data-option="credit-card">
                     <div>
-                        <p style="font-weight: bold;">จัดส่งแบบพัสดุ</p>
-                        <p>จัดส่งภายใน 7-10 วัน</p>
+                        <p style="font-weight: bold;">บัตรเครดิต</p>
                     </div>
-                    <p>99 บาท</p>
+                </div>
+                <div class="option" data-option="parcel">
+                    <div>
+                        <p style="font-weight: bold;">เก็บเงินปลายทาง</p>
+                    </div>
+                </div>
+                <div class="option" data-option="qr">
+                    <div>
+                        <p style="font-weight: bold;">QR พร้อมเพย์</p>
+                    </div>
+                </div>
+                <div class="option" data-option="wallet">
+                    <div>
+                        <p style="font-weight: bold;">ทรูมันนี่ วอลเล็ท</p>
+                    </div>
                 </div>
                 
-                <div class="option">
-                    <div>
-                        <p style="font-weight: bold;">จัดส่งโดยรถบรรทุก</p>
-                        <p>จัดส่งภายใน 7-10 วัน</p>
-                    </div>
-                    <p>99 บาท</p>
-                </div>
                 
                 <button class="continue-btn"><span class="text">ดำเนินการชำระเงินต่อ ></button>
                 <a href="#" class="back-link">< กลับไปที่รายละเอียด</a>
@@ -311,6 +375,10 @@
 
             <div class="right-section">
                 <div class="order-summary">
+                    <p style="font-weight: bold;">ราคารวม</p>
+                    
+                    <hr width="100%" style="margin-top: 30px; margin-bottom: 30px;"/>
+
                     <p style="font-weight: bold;">รายละเอียดการจัดส่ง</p>
                     <p>นางสาวภรณ์ทิพย์ แก้วกลม</p>
                     <p>1/45 ม.6 ต.วังเหนือ อ.บางซ้าย จ.พระนครศรีอยุธยา</p>
@@ -338,5 +406,61 @@
             </div>
         </div>
     </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const creditCardFormHTML = `
+                <div id="credit-card-form" class="credit-card-form">
+                    <h3>กรอกรายละเอียดบัตรเครดิต</h3>
+                    <form>
+                        <label for="card-name">ชื่อบนบัตร</label>
+                        <input type="text" id="card-name" name="card-name">
+
+                        <label for="card-number">หมายเลขบัตร</label>
+                        <input type="text" id="card-number" name="card-number">
+
+                        <label for="card-expiry">วันหมดอายุ</label>
+                        <input type="text" id="card-expiry" name="card-expiry">
+
+                        <label for="card-cvc">CVC</label>
+                        <input type="text" id="card-cvc" name="card-cvc">
+
+                        <button type="submit">ยืนยันการชำระเงิน</button>
+                    </form>
+                </div>
+            `;
+
+            const options = document.querySelectorAll('.option');
+            let creditCardFormInserted = false;
+
+            options.forEach(option => {
+                option.addEventListener('click', () => {
+                    // ลบฟอร์มเก่า (ถ้ามี)
+                    const existingForm = document.getElementById('credit-card-form');
+                    if (existingForm) {
+                        existingForm.remove();
+                        creditCardFormInserted = false;
+                    }
+
+                    const optionType = option.getAttribute('data-option');
+
+                    // ตรวจสอบว่าผู้ใช้เลือกบัตรเครดิต
+                    if (optionType === 'credit-card' && !creditCardFormInserted) {
+                        // แทรกฟอร์มภายในตัวเลือก
+                        option.insertAdjacentHTML('beforeend', creditCardFormHTML);
+                        creditCardFormInserted = true;
+                    }
+
+                    // ลบ class ที่เลือกจากทุกตัวเลือก
+                    options.forEach(opt => opt.classList.remove('selected'));
+                    // เพิ่ม class ที่เลือกในตัวเลือกปัจจุบัน
+                    option.classList.add('selected');
+                });
+            });
+        });
+
+
+    </script>
+
 </body>
 </html>
