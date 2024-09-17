@@ -18,7 +18,7 @@
     }
 
     .all-product h2 {
-      font-size: 24px;
+      font-size: 36px;
       margin-bottom: 10px;
     }
 
@@ -118,12 +118,12 @@
       margin: 0px 0 20px 0;
     }
 
+
     .custom-hr2 {
       border: 0;
-      width: 8%;
-      height: 10px;
-      background: #b1cfd9;
-      margin: 10px 0 10px 0;
+      height: 4px;
+      background: #ccc;
+      margin: 10px 0 20px 0;
     }
 
     h3 {
@@ -300,6 +300,115 @@
       right: 20px;
       bottom: 10px;
     }
+
+    .slideshow-container {
+      width: 750px;
+      height: 500px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .mySlides {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      opacity: 0;
+      transition: opacity 0.5s ease-in-out;
+    }
+
+    .mySlides.active {
+      opacity: 1;
+    }
+
+    .mySlides img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .prev,
+    .next {
+      cursor: pointer;
+      position: absolute;
+      top: 50%;
+      width: 50px;
+      height: 50px;
+      padding: 16px;
+      margin-top: -22px;
+      color: white;
+      font-weight: bold;
+      background-color: rgba(0, 0, 0, 0);
+      font-size: 26px;
+      transition: 0.6s ease;
+      border-radius: 0 3px 3px 0;
+      user-select: none;
+      z-index: 2;
+    }
+
+    .next {
+      right: 0;
+      border-radius: 3px 0 0 3px;
+    }
+
+    .sort-container {
+      text-align: right;
+      margin-bottom: 20px;
+    }
+
+    .sort-dropdown {
+      position: relative;
+      display: inline-block;
+    }
+
+    .sort-button {
+      background-color: #AC9C8D;
+      border: none;
+      border-radius: 5px;
+      color: white;
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    .sort-button i {
+      margin-left: 5px;
+    }
+
+    .sort-dropdown-content {
+      display: none;
+      position: absolute;
+      right: 0;
+      background-color: #EFE9E1;
+      box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+      z-index: 1;
+      border-radius: 5px;
+      overflow: hidden;
+      /* Ensures that no content spills out */
+    }
+
+    .sort-dropdown-content a {
+      color: #322D29;
+      padding: 12px 16px;
+      text-decoration: none;
+      display: block;
+      white-space: nowrap;
+      /* Prevents text from wrapping */
+    }
+
+    .sort-dropdown-content a:hover {
+      background-color: #D1C7BD;
+    }
+
+    .sort-dropdown:hover .sort-dropdown-content {
+      display: block;
+    }
+
+    .sort-dropdown:hover .sort-button i {
+
+      transition: transform 0.3s;
+    }
   </style>
 </head>
 
@@ -350,8 +459,21 @@
   <main>
     <section class="all-product">
       <div class="header-room">
-        <img src="https://www.ikea.com/ext/ingkadam/m/b188de628d74f5b/original/PH199271.jpg" alt="room-photo1"
-          class="room-img" />
+        <div class="slideshow-container">
+          <div class="mySlides">
+            <img src="https://www.ikea.com/ext/ingkadam/m/b188de628d74f5b/original/PH199271.jpg" alt="room-photo1">
+          </div>
+          <div class="mySlides">
+            <img
+              src="https://cdn.apartmenttherapy.info/image/upload/v1603122773/at/style/2020-10/IKEA%20Small%20Bedroom%20Update/PH170532.jpg"
+              alt="room-photo2">
+          </div>
+          <div class="mySlides">
+            <img src="https://www.ikea.com/ext/ingkadam/m/38106c80d39875ab/original/PH199467.jpg" alt="room-photo3">
+          </div>
+          <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+          <a class="next" onclick="plusSlides(1)">&#10095;</a>
+        </div>
         <div class="rightHead">
           <div class="room-detail-container">
             <p class="room-detail">
@@ -399,6 +521,16 @@
 
       <h2>ห้องนอน</h2>
       <hr class="custom-hr2" />
+      <div class="sort-container">
+        <div class="sort-dropdown">
+          <button class="sort-button">Sort by <i class="fas fa-caret-down"></i></button>
+          <div class="sort-dropdown-content">
+            <a href="#">Option 1</a>
+            <a href="#">Option 2</a>
+            <a href="#">Option 3</a>
+          </div>
+        </div>
+      </div>
       <div class="product-list">
         <!-- Repeat this block for each product -->
         <div class="product">
@@ -481,7 +613,8 @@
 
     updateDollars();
   });
-
+</script>
+<script>
   document.querySelectorAll('.dropdown-toggle').forEach(function (toggle) {
     toggle.addEventListener('click', function (e) {
 
@@ -513,6 +646,8 @@
       });
     }
   });
+</script>
+<script>
   const searchRoomItems = [
     { title: 'ห้องนอน', items: ['เตียงนอน', 'ตู้เสื้อผ้า', 'โต๊ะเครื่องแป้ง', 'โต๊ะข้างเตียง', 'ตู้เสื้อผ้าใหญ่', 'เตียงเด็ก', 'โต๊ะทำงาน', 'เก้าอี้นั่งเล่น', 'ตู้เสื้อผ้าสี', 'โต๊ะเครื่องแป้งไม้', 'เตียงนอนเด็ก', 'ตู้เก็บของ'] },
     { title: 'ห้องนั่งเล่น', items: ['โซฟา', 'โต๊ะกลาง', 'ตู้วางทีวี', 'เก้าอี้นั่งเล่น', 'โต๊ะข้างโซฟา', 'พรม', 'ตู้โชว์', 'เก้าอี้ทานอาหาร', 'โต๊ะทำงาน', 'โต๊ะรับประทานอาหาร', 'เก้าอี้บาร์', 'โต๊ะกาแฟ'] },
@@ -580,6 +715,43 @@
   createItems('popular-category-row', popularItems);
   createItems('promotion-row', promotionItems);
 
+</script>
+<script>
+  let slideIndex = 0;
+  const slides = document.getElementsByClassName("mySlides");
+
+  function showSlides() {
+    for (let i = 0; i < slides.length; i++) {
+      slides[i].classList.remove('active');
+    }
+    slides[slideIndex].classList.add('active');
+  }
+
+  function plusSlides(n) {
+    slideIndex += n;
+    if (slideIndex >= slides.length) { slideIndex = 0; }
+    if (slideIndex < 0) { slideIndex = slides.length - 1; }
+    showSlides();
+  }
+
+  // Optional: Auto-play functionality
+  setInterval(() => plusSlides(1), 5000);
+</script>
+<script>
+  document.querySelector('.sort-button').addEventListener('click', function () {
+    const dropdownContent = document.querySelector('.sort-dropdown-content');
+    const icon = this.querySelector('i');
+
+    if (dropdownContent.style.display === 'block') {
+      dropdownContent.style.display = 'none';
+      icon.classList.remove('fa-caret-up');
+      icon.classList.add('fa-caret-down');
+    } else {
+      dropdownContent.style.display = 'block';
+      icon.classList.remove('fa-caret-down');
+      icon.classList.add('fa-caret-up');
+    }
+  });
 </script>
 
 </html>
