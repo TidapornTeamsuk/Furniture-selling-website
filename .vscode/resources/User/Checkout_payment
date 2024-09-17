@@ -61,7 +61,7 @@
 
         .icon {
             font-size: 15px;
-            color: #0066cc;
+            color: #b5babf;;
             background-color: white;
             border-radius: 50%;
             width: 35px;
@@ -123,7 +123,7 @@
 
         .address-section p{
             font-size: 14px;
-            margin-bottom: 15px;
+            margin-bottom: 0px;
         }
 
         .edit-btn {
@@ -233,6 +233,26 @@
             font-size: 14px; /* Adjust the font size if needed */
         }
 
+        .option {
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            padding: 15px;
+            margin-bottom: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+        }
+        .option:hover{
+            color:#0066cc;
+            background-color: transparent;
+
+        }
+        .option.selected {
+            border-color: #0058a3;
+            background-color: #e6f2ff;
+        }
+
     </style>
 </head>
 <body>
@@ -243,14 +263,14 @@
                     <a href="#" class="logo">HOUSELY</a>
                     <div class="icon-container">
                         <div class="icon-item">
-                            <div class="icon">
+                            <div class="icon" style="color: #0066cc;">
                                 <i class="fas fa-check"></i>
                             </div>
                             <span class="icon-text">ข้อมูลของคุณ</span>
                         </div>
                         <span class="separator">-</span>
                         <div class="icon-item">
-                            <div class="icon">
+                            <div class="icon" style="color: #fff; background-color: #0066cc;">
                                 <i class="fas fa-truck"></i>
                             </div>
                             <span class="icon-text">บริการ</span>
@@ -264,29 +284,30 @@
                         </div>
                 </div>
             </div>
-                <div class="address-section">
-                    <h2>โปรดยืนยันหรือแก้ไขรายละเอียด</h2>
-                    <p class = "detail" style="margin-bottom: 25px;">ที่อยู่ในการจัดส่งสินค้าจะถูกใช้ในขั้นตอนต่อไป เพื่อหาตัวเลือกการจัดส่งและการรับสินค้าที่ดีที่สุด</p>
-                    <div class = "address">
-                        <p style="font-weight: bold;">ที่อยู่สำหรับจัดส่งสินค้า 
-                            <button class="edit-btn">
-                                <i class="fas fa-edit"></i><span class="text">แก้ไข</span>
-                            </button>          
-                        </p>
-                        <p>นางสาวภรณ์ทิพย์ แก้วกลม</p>
-                        <p>1/45 ม.6 ต.วังเหนือ อ.บางซ้าย จ.พระนครศรีอยุธยา</p>
-                        <p>33140</p>
-                        <p>+66 88 603 4580</p>
-                        <button class="other-add-btn"><span class="text">เลือกที่อยู่อื่น</span></button>
-                        <hr width="100%" style="margin-top: 70px; margin-bottom: 30px;"/>
-                            <p style="font-weight: bold;">อีเมลยืนยันคำสั่งซื้อสินค้า</p>
-                            <p>taksakhim@gmail.com</p>
-                        
-                            <button class="continue-btn"><span class = "text">ไปขั้นตอนถัดไป ></span></button>
-                            <a href="#" class="back-link">< กลับไปที่ตะกร้า</a>
+            <div class="address-section">
+                <h2>คุณต้องการรับคำสั่งซื้อของคุณด้วยวิธีใด?</h2>
+                
+
+                <div class="option">
+                    <div>
+                        <p style="font-weight: bold;">จัดส่งแบบพัสดุ</p>
+                        <p>จัดส่งภายใน 7-10 วัน</p>
                     </div>
+                    <p>99 บาท</p>
                 </div>
+                
+                <div class="option">
+                    <div>
+                        <p style="font-weight: bold;">จัดส่งโดยรถบรรทุก</p>
+                        <p>จัดส่งภายใน 7-10 วัน</p>
+                    </div>
+                    <p>99 บาท</p>
+                </div>
+                
+                <button class="continue-btn"><span class="text">ดำเนินการชำระเงินต่อ ></button>
+                <a href="#" class="back-link">< กลับไปที่รายละเอียด</a>
             </div>
+        </div>
 
             <div class="right-section">
                 <div class="order-summary">
