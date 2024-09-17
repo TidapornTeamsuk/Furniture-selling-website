@@ -233,6 +233,130 @@
             font-size: 14px; /* Adjust the font size if needed */
         }
 
+        /* Popup background */
+        .popup {
+            display: none; /* Hide by default */
+            position: fixed;
+            top: 0;
+            right: 0;
+            width: 400px; /* Adjust width as needed */
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+            z-index: 1000; /* Ensure it appears on top */
+            transition: transform 0.3s ease-in-out; /* Slide effect */
+            transform: translateX(100%); /* Start off-screen */
+        }
+
+        /* Show the popup */
+        .popup.show {
+            display: block;
+            transform: translateX(0); /* Slide into view */
+        }
+
+        /* Popup content */
+        .popup-content {
+            background-color: #fff;
+            padding: 20px;
+            height: 100%;
+            overflow-y: auto; /* Scroll if content is too tall */
+            position: relative;
+            width: 100%;
+            height: 100%;
+            border-radius: 10px; /* Rounded corners */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+        }
+
+        /* Close button */
+        .close-btn {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            font-size: 24px;
+            color: #333;
+            cursor: pointer;
+        }
+
+        /* Popup heading */
+        .popup h2 {
+            font-size: 20px;
+            margin-bottom: 20px;
+            color: #333;
+            font-family: 'Poppins', sans-serif; /* Modern font for headings */
+        }
+
+        /* Form elements */
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        label {
+            font-size: 14px;
+            margin-bottom: 5px;
+            color: #555;
+            font-family: 'Anuphan', sans-serif; /* Consistent font */
+        }
+
+        input, textarea {
+            font-size: 14px;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            margin-bottom: 15px;
+            box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1); /* Inner shadow for depth */
+            resize: vertical; /* Allow resizing of textarea vertically */
+        }
+
+        textarea {
+            height: 100px; /* Fixed height for textarea */
+        }
+
+        /* Submit button */
+        .submit-btn {
+            background-color: #0066cc;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .submit-btn:hover {
+            background-color: #005bb5; /* Darker shade on hover */
+        }
+
+        /* Existing CSS */
+
+        /* Additional styles for the address popup */
+        .address-list {
+            margin-bottom: 20px;
+        }
+
+        .address-item {
+            background-color: #f9f9f9;
+            padding: 15px;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            margin-bottom: 10px;
+        }
+
+        #address-popup textarea {
+            height: 100px;
+        }
+
+        /* Add Address Popup */
+        #add-address-popup {
+            width: 400px;
+        }
+
+        #add-address-popup textarea {
+            height: 100px;
+        }
+
+
+
     </style>
 </head>
 <body>
@@ -315,7 +439,124 @@
                     <hr width="100%" style="margin-top: 30px; margin-bottom: 30px;"/>
                 </div>
             </div>
+
+            <!-- Popup HTML -->
+            <div id="edit-popup" class="popup">
+                <div class="popup-content">
+                    <span class="close-btn">&times;</span>
+                    <h2>แก้ไขรายละเอียด</h2>
+                    <!-- Your form or content for editing goes here -->
+                    <form>
+                        <label for="name">ชื่อ:</label>
+                        <input type="text" id="name" name="name" value="นางสาวภรณ์ทิพย์ แก้วกลม"><br><br>
+                        <label for="address">ที่อยู่:</label>
+                        <textarea id="address" name="address">1/45 ม.6 ต.วังเหนือ อ.บางซ้าย จ.พระนครศรีอยุธยา</textarea><br><br>
+                        <label for="postal-code">รหัสไปรษณีย์:</label>
+                        <input type="text" id="postal-code" name="postal-code" value="33140"><br><br>
+                        <label for="phone">เบอร์โทรศัพท์:</label>
+                        <input type="text" id="phone" name="phone" value="+66 88 603 4580"><br><br>
+                        <button type="submit" class="submit-btn">บันทึก</button>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Address List Popup HTML -->
+            <div id="address-popup" class="popup">
+                <div class="popup-content">
+                    <span class="close-btn">&times;</span>
+                    <h2>เลือกที่อยู่</h2>
+                    <div class="address-list">
+                        <div class="address-item">
+                            <p>ที่อยู่ที่เคยกรอก</p>
+                            <p>นางสาวภรณ์ทิพย์ แก้วกลม</p>
+                            <p>1/45 ม.6 ต.วังเหนือ อ.บางซ้าย จ.พระนครศรีอยุธยา</p>
+                            <p>33140</p>
+                            <p>+66 88 603 4580</p>
+                        </div>
+                        <!-- Add more address items here as needed -->
+                    </div>
+                    <button id="open-add-address-popup" class="submit-btn">เพิ่มที่อยู่ใหม่</button>
+                </div>
+            </div>
+
+            <!-- Add Address Popup HTML -->
+            <div id="add-address-popup" class="popup">
+                <div class="popup-content">
+                    <span class="close-btn">&times;</span>
+                    <h2>เพิ่มที่อยู่ใหม่</h2>
+                    <form id="add-address-form">
+                        <label for="new-address-name">ชื่อ:</label>
+                        <input type="text" id="new-address-name" name="new-address-name"><br><br>
+                        <label for="new-address">ที่อยู่:</label>
+                        <textarea id="new-address" name="new-address"></textarea><br><br>
+                        <label for="new-postal-code">รหัสไปรษณีย์:</label>
+                        <input type="text" id="new-postal-code" name="new-postal-code"><br><br>
+                        <label for="new-phone">เบอร์โทรศัพท์:</label>
+                        <input type="text" id="new-phone" name="new-phone"><br><br>
+                        <button type="submit" class="submit-btn">เพิ่มที่อยู่</button>
+                    </form>
+                </div>
+            </div>
+
         </div>
     </div>
+
+    <script>
+        // Get the elements for both popups
+        const editPopup = document.getElementById('edit-popup');
+        const addressPopup = document.getElementById('address-popup');
+        const addAddressPopup = document.getElementById('add-address-popup');
+        const openEditBtn = document.querySelector('.edit-btn');
+        const openAddressBtn = document.querySelector('.other-add-btn');
+        const openAddAddressBtn = document.getElementById('open-add-address-popup');
+        const closeEditBtn = document.querySelectorAll('.close-btn')[0];
+        const closeAddressBtn = document.querySelectorAll('.close-btn')[1];
+        const closeAddAddressBtn = document.querySelectorAll('.close-btn')[2];
+    
+        // Show the edit popup
+        openEditBtn.addEventListener('click', () => {
+            editPopup.classList.add('show');
+        });
+    
+        // Show the address popup
+        openAddressBtn.addEventListener('click', () => {
+            addressPopup.classList.add('show');
+        });
+    
+        // Show the add address popup
+        openAddAddressBtn.addEventListener('click', () => {
+            addAddressPopup.classList.add('show');
+        });
+    
+        // Hide the edit popup
+        closeEditBtn.addEventListener('click', () => {
+            editPopup.classList.remove('show');
+        });
+    
+        // Hide the address popup
+        closeAddressBtn.addEventListener('click', () => {
+            addressPopup.classList.remove('show');
+        });
+    
+        // Hide the add address popup
+        closeAddAddressBtn.addEventListener('click', () => {
+            addAddressPopup.classList.remove('show');
+        });
+    
+        // Optional: Hide the popups when clicking outside of them
+        window.addEventListener('click', (event) => {
+            if (event.target === editPopup) {
+                editPopup.classList.remove('show');
+            }
+            if (event.target === addressPopup) {
+                addressPopup.classList.remove('show');
+            }
+            if (event.target === addAddressPopup) {
+                addAddressPopup.classList.remove('show');
+            }
+        });
+    </script>
+    
+    
 </body>
 </html>
