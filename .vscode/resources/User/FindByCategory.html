@@ -135,8 +135,17 @@
     }
 
     .sort-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
       text-align: right;
       margin-bottom: 20px;
+    }
+
+    .item-count {
+      font-size: 16px;
+      color: #322D29;
+      /* Adjust color as needed */
     }
 
     .sort-dropdown {
@@ -145,10 +154,10 @@
     }
 
     .sort-button {
-      background-color: #AC9C8D;
+      background-color: #e6f8f3;
       border: none;
       border-radius: 5px;
-      color: white;
+      color: black;
       padding: 10px 20px;
       font-size: 16px;
       cursor: pointer;
@@ -162,7 +171,7 @@
       display: none;
       position: absolute;
       right: 0;
-      background-color: #EFE9E1;
+      background-color: #e6f8f3;
       box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
       z-index: 1;
       border-radius: 5px;
@@ -180,8 +189,9 @@
     }
 
     .sort-dropdown-content a:hover {
-      background-color: #D1C7BD;
+      background-color: #bdd1c7;
     }
+
 
     .sort-dropdown:hover .sort-dropdown-content {
       display: block;
@@ -272,6 +282,7 @@
       <h2>โซฟา</h2>
       <hr class="custom-hr">
       <div class="sort-container">
+        <div class="item-count">12 รายการ</div>
         <div class="sort-dropdown">
           <button class="sort-button">Sort by <i class="fas fa-caret-down"></i></button>
           <div class="sort-dropdown-content">
@@ -280,6 +291,7 @@
             <a href="#">Option 3</a>
           </div>
         </div>
+
       </div>
       <div class="product-list">
         <!-- Repeat this block for each product -->

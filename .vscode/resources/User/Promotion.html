@@ -96,6 +96,73 @@
       font-size: 18px;
       color: #333;
     }
+    .sort-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      text-align: right;
+      margin-bottom: 20px;
+    }
+
+    .item-count {
+      font-size: 16px;
+      color: #322D29;
+      /* Adjust color as needed */
+    }
+
+    .sort-dropdown {
+      position: relative;
+      display: inline-block;
+    }
+
+    .sort-button {
+      background-color: #d7efe9;
+      border: none;
+      border-radius: 5px;
+      color: black;
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    .sort-button i {
+      margin-left: 5px;
+    }
+
+    .sort-dropdown-content {
+      display: none;
+      position: absolute;
+      right: 0;
+      background-color: #e6f8f3;
+      box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+      z-index: 1;
+      border-radius: 5px;
+      overflow: hidden;
+      font-size: 16px;
+      /* Ensures that no content spills out */
+    }
+
+    .sort-dropdown-content a {
+      color: #322D29;
+      padding: 12px 16px;
+      text-decoration: none;
+      display: block;
+      white-space: nowrap;
+      /* Prevents text from wrapping */
+    }
+
+    .sort-dropdown-content a:hover {
+      background-color: #bdd1c7;
+    }
+
+    .sort-dropdown:hover .sort-dropdown-content {
+      display: block;
+    }
+
+    .sort-dropdown:hover .sort-button i {
+
+      transition: transform 0.3s;
+    }
   </style>
 </head>
 
@@ -147,6 +214,17 @@
     <section class="all-product">
       <h2>ส่วนลด 50%</h2>
       <hr class="custom-hr">
+      <div class="sort-container">
+        <div class="item-count">12 รายการ</div>
+        <div class="sort-dropdown">
+          <button class="sort-button">Sort by <i class="fas fa-caret-down"></i></button>
+          <div class="sort-dropdown-content">
+            <a href="#">Option 1</a>
+            <a href="#">Option 2</a>
+            <a href="#">Option 3</a>
+          </div>
+        </div>
+      </div>
       <div class="product-list">
         <!-- Repeat this block for each product -->
         <div class="product">
@@ -279,5 +357,20 @@
   createItems('promotion-row', promotionItems);
 
 </script>
+<script>
+  document.querySelector('.sort-button').addEventListener('click', function () {
+    const dropdownContent = document.querySelector('.sort-dropdown-content');
+    const icon = this.querySelector('i');
 
+    if (dropdownContent.style.display === 'block') {
+      dropdownContent.style.display = 'none';
+      icon.classList.remove('fa-caret-up');
+      icon.classList.add('fa-caret-down');
+    } else {
+      dropdownContent.style.display = 'block';
+      icon.classList.remove('fa-caret-down');
+      icon.classList.add('fa-caret-up');
+    }
+  });
+</script>
 </html>
