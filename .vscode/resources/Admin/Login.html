@@ -56,10 +56,17 @@
 
         a {
             -webkit-transition: all 0.4s ease-in-out;
+            /* สำหรับเบราว์เซอร์ที่ใช้ WebKit (Chrome, Safari) */
             -moz-transition: all 0.4s ease-in-out;
+            /* สำหรับเบราว์เซอร์ Firefox รุ่นเก่า */
             -ms-transition: all 0.4s ease-in-out;
+            /* สำหรับเบราว์เซอร์ Microsoft รุ่นเก่า */
             -o-transition: all 0.4s ease-in-out;
+            /* สำหรับ Opera รุ่นเก่า */
+            transition: all 0.4s ease-in-out;
+            /* มาตรฐานสำหรับเบราว์เซอร์สมัยใหม่ */
         }
+
 
         input,
         select,
