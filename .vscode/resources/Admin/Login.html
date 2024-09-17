@@ -552,7 +552,7 @@
                 </div>
                 <input type="hidden" value="user" name="logintype">
                 <div class="button login">
-                    <button type="button">
+                    <button type="submit">
                         <span>Login</span> <i class="fa fa-check"></i>
                     </button>
                 </div>
@@ -566,32 +566,33 @@
             </div>
 
             <div class="title">Register</div>
-            <form method="post" role="form" id="admilogin">
+            <form method="post" role="form" id="adminRegister">
                 <div class="input">
-                    <label for="regname">Username</label>
-                    <input type="text" name="user_name" id="user_name" class="valid">
+                    <label for="user_name">Username</label>
+                    <input type="text" name="user_name" id="user_name" class="valid" required>
                     <span class="spin"></span>
                 </div>
                 <div class="input">
-                    <label for="regname">Email</label>
-                    <input type="text" name="email" id="regname" class="valid">
+                    <label for="regemail">Email</label>
+                    <input type="email" name="email" id="regemail" class="valid" required>
                     <span class="spin"></span>
                 </div>
                 <div class="input">
                     <label for="reregpass">Password</label>
-                    <input type="password" name="password" id="reregpass" class="valid">
+                    <input type="password" name="password" id="reregpass" class="valid" required>
                     <span class="spin"></span>
                 </div>
                 <div class="input">
                     <label for="confirm_pass">Confirm Password</label>
-                    <input type="password" name="password_confirm" id="confirm_pass" class="valid">
+                    <input type="password" name="password_confirm" id="confirm_pass" class="valid" required>
                     <span class="spin"></span>
                 </div>
 
                 <input type="hidden" value="admin" name="logintype">
+
                 <div style="margin-top: 15px;" class="button">
-                    <button type="button" class="test">
-                        <span>Login Into Portal</span>
+                    <button type="submit" class="test">
+                        <span>Register</span>
                     </button>
                 </div>
             </form>
@@ -730,6 +731,32 @@
         $(".cursor").toggleClass("linkClicked");
     });
 
+</script>
+
+<!-- JavaScript สำหรับตรวจสอบฟอร์ม -->
+<script>
+    document.getElementById('userlogin').addEventListener('submit', function(e) {
+        var email = document.getElementById('name').value;
+        var password = document.getElementById('pass').value;
+
+        if (email === '' || password === '') {
+            e.preventDefault(); // ป้องกันการส่งฟอร์มถ้าข้อมูลไม่ครบ
+            alert('Please enter both email and password.');
+        }
+    });
+</script>
+
+<!-- JavaScript สำหรับตรวจสอบฟอร์ม -->
+<script>
+    document.getElementById('adminRegister').addEventListener('submit', function(e) {
+        var password = document.getElementById('reregpass').value;
+        var confirmPassword = document.getElementById('confirm_pass').value;
+        
+        if (password !== confirmPassword) {
+            e.preventDefault(); // ป้องกันการส่งฟอร์ม
+            alert('Passwords do not match!');
+        }
+    });
 </script>
 
 </html>

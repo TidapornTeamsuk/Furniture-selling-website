@@ -31,6 +31,39 @@
     table tbody tr:nth-child(even){
         background-color: #f8fafc;
     }
+    .user-icon {
+            position: fixed;
+            bottom: 16px;
+            right: 55px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #ffffff;
+            border: 1px solid #ddd;
+            border-radius: 35px;
+            /* Rounded corners */
+            padding: 12px;
+            width: 150px;
+            box-shadow: 0 1px 5px rgba(0, 0, 0, 0.2);
+            /* Similar shadow */
+        }
+
+        .user-icon-content {
+            display: flex;
+            align-items: center;
+        }
+
+        .user-icon-content .role-label {
+            margin-left: 10px;
+            font-size: 16px;
+            font-weight: 500;
+        }
+
+        .user-icon i {
+            margin-left: 20px;
+            font-size: 48px;
+            /* Increase icon size */
+        }
 </style>
 <body>
 <body>
@@ -76,11 +109,11 @@
         <div class="bg-white p-6 rounded-lg shadow-lg w-1/2">
             <h2 class="text-2xl font-semibold mb-4">รายละเอียดการสั่งซื้อ</h2>
             <div class="mb-4">
-                <p class="text-lg font-medium">เลขที่ใบกำกับการสั่งซื้อ: <span id="orderNumber">1001</span></p>
-                <p class="text-lg font-medium">ชื่อลูกค้า: <span id="customerName">John Doe</span></p>
-                <p class="text-lg font-medium">วันที่สั่งซื้อ: <span id="orderDate">2024-09-15</span></p>
+                <p class="text-lg font-medium" style="margin-top: 5px;">เลขที่ใบกำกับการสั่งซื้อ: <span id="orderNumber">1001</span></p>
+                <p class="text-lg font-medium" style="margin-top: 5px;">ชื่อลูกค้า: <span id="customerName">John Doe</span></p>
+                <p class="text-lg font-medium" style="margin-top: 5px;">วันที่สั่งซื้อ: <span id="orderDate">2024-09-15</span></p>
                 <div class="mb-4">
-                    <label for="orderStatus" class="block text-sm font-medium mb-2">สถานะการสั่งซื้อ</label>
+                    <label for="orderStatus" class="block text-sm font-medium mb-2" style="margin-top: 10px;">สถานะการสั่งซื้อ</label>
                     <select id="orderStatus" name="orderStatus" class="w-full px-3 py-2 border border-gray-300 rounded-lg">
                         <option value="Pending">อยู่ระหว่างการดำเนินการ</option>
                         <option value="Shipping">อยู่ระหว่างการจัดส่ง</option>
@@ -102,6 +135,16 @@
             </div>
         </div>
     </div>
+
+    <!-- User Icon and Role Label -->
+    <div class="user-icon">
+        <div class="user-icon-content">
+            <div class="role-label" style="font-weight: bold;">Admin</div>
+            <i class="fas fa-user-circle fa-3x text-gray-700"></i>
+
+        </div>
+    </div>
+
 
     <script>
         document.querySelectorAll('[data-modal-target]').forEach(button => {

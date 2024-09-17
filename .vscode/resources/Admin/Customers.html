@@ -40,6 +40,40 @@
         .search-input {
             margin-right: 10px;
         }
+
+        .user-icon {
+            position: fixed;
+            bottom: 16px;
+            right: 55px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #ffffff;
+            border: 1px solid #ddd;
+            border-radius: 35px;
+            /* Rounded corners */
+            padding: 12px;
+            width: 150px;
+            box-shadow: 0 1px 5px rgba(0, 0, 0, 0.2);
+            /* Similar shadow */
+        }
+
+        .user-icon-content {
+            display: flex;
+            align-items: center;
+        }
+
+        .user-icon-content .role-label {
+            margin-left: 10px;
+            font-size: 16px;
+            font-weight: 500;
+        }
+
+        .user-icon i {
+            margin-left: 20px;
+            font-size: 48px;
+            /* Increase icon size */
+        }
     </style>
 </head>
 <body>
@@ -68,6 +102,7 @@
                 <thead class="table-header">
                     <tr>
                         <th class="sortable px-6 py-3 text-left text-l font-medium text-white uppercase tracking-wider">ชื่อ</th>
+                        <th class="sortable px-6 py-3 text-left text-l font-medium text-white uppercase tracking-wider">วันเกิด</th>
                         <th class="sortable px-6 py-3 text-left text-l font-medium text-white uppercase tracking-wider">อีเมล</th>
                         <th class="sortable px-6 py-3 text-left text-l font-medium text-white uppercase tracking-wider">เบอร์โทรศัพท์</th>
                         <th class="sortable px-6 py-3 text-left text-l font-medium text-white uppercase tracking-wider">ที่อยู่สำหรับการจัดส่ง</th>
@@ -77,6 +112,7 @@
                 <tbody class="bg-white divide-y divide-gray-200">
                     <tr class="table-row">
                         <td class="px-6 py-4 whitespace-nowrap">John Doe</td>
+                        <td class="px-6 py-4 whitespace-nowrap">01 มกราคม 1990</td>
                         <td class="px-6 py-4 whitespace-nowrap">john.doe@example.com</td>
                         <td class="px-6 py-4 whitespace-nowrap">123-456-7890</td>
                         <td class="px-6 py-4 whitespace-nowrap">1234 Elm Street, Cityville, USA</td>
@@ -124,6 +160,15 @@
                     <!-- Add more order history rows here -->
                 </tbody>
             </table>
+        </div>
+    </div>
+
+    <!-- User Icon and Role Label -->
+    <div class="user-icon">
+        <div class="user-icon-content">
+            <div class="role-label" style="font-weight: bold;">Admin</div>
+            <i class="fas fa-user-circle fa-3x text-gray-700"></i>
+
         </div>
     </div>
 

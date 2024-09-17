@@ -17,6 +17,39 @@
             font-size: 16px;
             color: #333;
         }
+        .user-icon {
+            position: fixed;
+            bottom: 16px;
+            right: 55px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #ffffff;
+            border: 1px solid #ddd;
+            border-radius: 35px;
+            /* Rounded corners */
+            padding: 12px;
+            width: 150px;
+            box-shadow: 0 1px 5px rgba(0, 0, 0, 0.2);
+            /* Similar shadow */
+        }
+
+        .user-icon-content {
+            display: flex;
+            align-items: center;
+        }
+
+        .user-icon-content .role-label {
+            margin-left: 10px;
+            font-size: 16px;
+            font-weight: 500;
+        }
+
+        .user-icon i {
+            margin-left: 20px;
+            font-size: 48px;
+            /* Increase icon size */
+        }
 
         .btn-custom {
             background-color: #007bff;
@@ -123,12 +156,27 @@
                     <td th:text="${promotion.endDate}">End Date</td>
                     <td>
                         <a th:href="@{'/admin/promotions/edit/' + ${promotion.id}}" class="btn btn-warning">แก้ไข</a>
-                        <a th:href="@{'/admin/promotions/delete/' + ${promotion.id}}" class="btn btn-danger">ลบ</a>
+                        <a th:href="@{'/admin/products/delete/' + ${product.id}}" class="btn btn-danger" onclick="return confirmDelete()">ลบ</a>
                     </td>
                 </tr>
             </tbody>
         </table>
     </div>
+
+    <!-- User Icon and Role Label -->
+    <div class="user-icon">
+        <div class="user-icon-content">
+            <div class="role-label" style="font-weight: bold;">Admin</div>
+            <i class="fas fa-user-circle fa-3x text-gray-700"></i>
+
+        </div>
+    </div>
+
+    <script>
+        function confirmDelete() {
+            return confirm('คุณแน่ใจว่าต้องการลบโปรโมชันนี้?'); // กล่องข้อความยืนยัน
+        }
+    </script>
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>

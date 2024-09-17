@@ -3,8 +3,10 @@
 
 <head>
     <title>เพิ่มสินค้า</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Aboreto&family=Anuphan:wght@100..700&display=swap" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.0.3/dist/tailwind.min.css" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
     <style>
         body {
             font-family: "Anuphan", sans-serif;
@@ -29,6 +31,39 @@
         }
         .btn-custom:hover {
             background-color: #0056b3;
+        }
+        .user-icon {
+            position: fixed;
+            bottom: 16px;
+            right: 55px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #ffffff;
+            border: 1px solid #ddd;
+            border-radius: 35px;
+            /* Rounded corners */
+            padding: 12px;
+            width: 150px;
+            box-shadow: 0 1px 5px rgba(0, 0, 0, 0.2);
+            /* Similar shadow */
+        }
+
+        .user-icon-content {
+            display: flex;
+            align-items: center;
+        }
+
+        .user-icon-content .role-label {
+            margin-left: 10px;
+            font-size: 16px;
+            font-weight: 500;
+        }
+
+        .user-icon i {
+            margin-left: 20px;
+            font-size: 48px;
+            /* Increase icon size */
         }
     </style>
 </head>
@@ -101,6 +136,15 @@
             <button type="submit" class="btn btn-custom">บันทึก</button>
             <a href="/admin/products" class="btn btn-secondary">ยกเลิก</a>
         </form>
+    </div>
+    
+     <!-- User Icon and Role Label -->
+     <div class="user-icon">
+        <div class="user-icon-content">
+            <div class="role-label" style="font-weight: bold;">Admin</div>
+            <i class="fas fa-user-circle fa-3x text-gray-700"></i>
+
+        </div>
     </div>
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>

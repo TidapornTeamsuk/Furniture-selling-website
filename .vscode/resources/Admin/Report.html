@@ -5,64 +5,84 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>รายงาน</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Aboreto&family=Anuphan:wght@100..700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Aboreto&family=Anuphan:wght@100..700&display=swap" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.0.3/dist/tailwind.min.css" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
     <style>
         body {
             font-family: 'Anuphan', sans-serif;
+            background-color: #f0f4f8;
+        }
+        .container {
+            max-width: 1200px;
+        }
+        .card {
+            transition: transform 0.2s ease-in-out;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+        }
+        .title {
+            font-family: 'Aboreto', cursive;
         }
     </style>
 </head>
 <body>
-    <div class="container mx-auto p-4">
+    <div class="container mx-auto p-6">
         <div class="flex justify-between items-center mb-6">
-            <h1 class="text-3xl font-bold" style="margin-top: 20px;">รายงาน</h1>
+            <h1 class="text-3xl font-bold" style="margin-top: 30px; font-size: 1.8rem; font-weight: bold;">รายงาน</h1>
             <a href="/admin" class="text-blue-500 hover:text-blue-700 font-semibold">
-                <i class="fas fa-arrow-left h-5 w-5"></i> กลับสู่แดชบอร์ด
+                <i class="fas fa-arrow-left h-5 w-5"></i> กลับสู่หน้าแดชบอร์ด
             </a>
         </div>
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mb-8">
-            <div class="bg-white p-4 rounded-lg shadow">
-                <div class="flex flex-row items-center justify-between space-y-0 pb-2">
-                    <h3 class="text-sm font-medium">รายงานยอดขายรายวัน</h3>
-                    <i class="fas fa-calendar-day h-4 w-4 text-gray-500"></i>
+
+        <!-- รายงานยอดขาย -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-10">
+            <div class="bg-white p-6 rounded-lg shadow card">
+                <div class="flex justify-between items-center mb-4">
+                    <h3 class="text-lg font-medium text-gray-700">รายงานยอดขายรายวัน</h3>
+                    <i class="fas fa-calendar-day text-gray-500 text-2xl"></i>
                 </div>
-                <div class="text-xl font-bold">ข้อมูลยอดขายของวันนี้</div>
+                <p class="text-2xl font-bold text-gray-900">ข้อมูลยอดขายของวันนี้</p>
             </div>
-            <div class="bg-white p-4 rounded-lg shadow">
-                <div class="flex flex-row items-center justify-between space-y-0 pb-2">
-                    <h3 class="text-sm font-medium">รายงานยอดขายรายสัปดาห์</h3>
-                    <i class="fas fa-calendar-week h-4 w-4 text-gray-500"></i>
+
+            <div class="bg-white p-6 rounded-lg shadow card">
+                <div class="flex justify-between items-center mb-4">
+                    <h3 class="text-lg font-medium text-gray-700">รายงานยอดขายรายสัปดาห์</h3>
+                    <i class="fas fa-calendar-week text-gray-500 text-2xl"></i>
                 </div>
-                <div class="text-xl font-bold">ข้อมูลยอดขายของสัปดาห์นี้</div>
+                <p class="text-2xl font-bold text-gray-900">ข้อมูลยอดขายของสัปดาห์นี้</p>
             </div>
-            <div class="bg-white p-4 rounded-lg shadow">
-                <div class="flex flex-row items-center justify-between space-y-0 pb-2">
-                    <h3 class="text-sm font-medium">รายงานยอดขายรายเดือน</h3>
-                    <i class="fas fa-calendar-month h-4 w-4 text-gray-500"></i>
+
+            <div class="bg-white p-6 rounded-lg shadow card">
+                <div class="flex justify-between items-center mb-4">
+                    <h3 class="text-lg font-medium text-gray-700">รายงานยอดขายรายเดือน</h3>
+                    <i class="fas fa-calendar-month text-gray-500 text-2xl"></i>
                 </div>
-                <div class="text-xl font-bold">ข้อมูลยอดขายของเดือนนี้</div>
+                <p class="text-2xl font-bold text-gray-900">ข้อมูลยอดขายของเดือนนี้</p>
             </div>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-            <div class="bg-white p-4 rounded-lg shadow">
-                <div class="flex flex-row items-center justify-between space-y-0 pb-2">
-                    <h3 class="text-sm font-medium">รายงานสินค้าขายดี</h3>
-                    <i class="fas fa-box h-4 w-4 text-gray-500"></i>
+        <!-- รายงานสินค้าและลูกค้า -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div class="bg-white p-6 rounded-lg shadow card">
+                <div class="flex justify-between items-center mb-4">
+                    <h3 class="text-lg font-medium text-gray-700">รายงานสินค้าขายดี</h3>
+                    <i class="fas fa-box text-gray-500 text-2xl"></i>
                 </div>
-                <div class="text-xl font-bold">ข้อมูลสินค้าที่ขายดีที่สุด</div>
+                <p class="text-2xl font-bold text-gray-900">ข้อมูลสินค้าที่ขายดีที่สุด</p>
             </div>
-            <div class="bg-white p-4 rounded-lg shadow">
-                <div class="flex flex-row items-center justify-between space-y-0 pb-2">
-                    <h3 class="text-sm font-medium">รายงานลูกค้าท็อป</h3>
-                    <i class="fas fa-users h-4 w-4 text-gray-500"></i>
+
+            <div class="bg-white p-6 rounded-lg shadow card">
+                <div class="flex justify-between items-center mb-4">
+                    <h3 class="text-lg font-medium text-gray-700">รายงานลูกค้าท็อป</h3>
+                    <i class="fas fa-users text-gray-500 text-2xl"></i>
                 </div>
-                <div class="text-xl font-bold">ข้อมูลลูกค้าที่ใช้จ่ายมากที่สุด</div>
+                <p class="text-2xl font-bold text-gray-900">ข้อมูลลูกค้าที่ใช้จ่ายมากที่สุด</p>
             </div>
         </div>
     </div>
-
-
 </body>
 </html>
