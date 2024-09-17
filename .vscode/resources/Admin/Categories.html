@@ -43,6 +43,39 @@
             border-radius: 8px;
             padding: 16px;
         }
+        .user-icon {
+            position: fixed;
+            bottom: 16px;
+            right: 55px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #ffffff;
+            border: 1px solid #ddd;
+            border-radius: 35px;
+            /* Rounded corners */
+            padding: 12px;
+            width: 150px;
+            box-shadow: 0 1px 5px rgba(0, 0, 0, 0.2);
+            /* Similar shadow */
+        }
+
+        .user-icon-content {
+            display: flex;
+            align-items: center;
+        }
+
+        .user-icon-content .role-label {
+            margin-left: 10px;
+            font-size: 16px;
+            font-weight: 500;
+        }
+
+        .user-icon i {
+            margin-left: 20px;
+            font-size: 48px;
+            /* Increase icon size */
+        }
     </style>
 </head>
 <body>
@@ -71,17 +104,10 @@
                     <tr class="table-row">
                         <td class="px-6 py-4 whitespace-nowrap">Electronics</td>
                         <td class="px-6 py-4 whitespace-nowrap">50</td>
-                        <td class="px-6 py-4 whitespace-nowrap">
-                            <div class="flex space-x-2">
-                                <a href="#editCategoryModal" data-modal-target="editCategoryModal" class="text-yellow-500 hover:text-yellow-700 flex items-center">
-                                    <i class="fas fa-edit h-5 w-5 mr-2"></i> แก้ไข
-                                </a>
-                                <a href="/admin/categories/delete/1" class="text-red-500 hover:text-red-700 flex items-center">
-                                    <i class="fas fa-trash h-5 w-5 mr-2"></i> ลบ
-                                </a>
-                            </div>
+                        <td>
+                            <a th:href="@{'/admin/products/edit/' + ${product.id}}" class="btn btn-warning">แก้ไข</a>
+                            <a th:href="@{'/admin/products/delete/' + ${product.id}}" class="btn btn-danger" onclick="return confirmDelete()">ลบ</a>
                         </td>
-                        
                     </tr>
                     <!-- Repeat rows for other categories -->
                 </tbody>
@@ -122,6 +148,21 @@
             </form>
         </div>
     </div>
+
+    <!-- User Icon and Role Label -->
+    <div class="user-icon">
+        <div class="user-icon-content">
+            <div class="role-label" style="font-weight: bold;">Admin</div>
+            <i class="fas fa-user-circle fa-3x text-gray-700"></i>
+
+        </div>
+    </div>
+
+    <script>
+        function confirmDelete() {
+            return confirm('คุณแน่ใจว่าต้องการลบหมวดหมู่นี้?'); // กล่องข้อความยืนยัน
+        }
+    </script>
 
     <script>
         document.querySelectorAll('[data-modal-target]').forEach(button => {
