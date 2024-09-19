@@ -109,20 +109,16 @@
 </head>
 
 <body>
-
     <div class="container mx-auto p-4">
         <div class="flex justify-between items-center mb-6">
-            <h1 class="text-3xl font-bold" style="margin-top: 30px; font-size: 1.8rem; font-weight: bold;">รายการสินค้า
-            </h1>
+            <h1 class="text-3xl font-bold" style="margin-top: 30px; font-size: 1.8rem; font-weight: bold;">รายการสินค้า</h1>
             <a href="/admin" class="text-blue-500 hover:text-blue-700 font-semibold">
                 <i class="fas fa-arrow-left h-5 w-5"></i> กลับสู่หน้าแดชบอร์ด
             </a>
         </div>
 
-        <!-- <a href="/admin/products/new" class="flex justify-end mb-4">เพิ่มสินค้าใหม่</a> -->
-
         <div class="flex justify-end mb-4">
-            <a href="#addProductModal" data-modal-target="addCategoryModal"
+            <a href="#addProductModal" data-modal-target="addProductModal"
                 class="bg-green-500 text-white px-4 py-2 rounded-lg shadow-md hover:bg-green-600 transition-colors">
                 <i class="fas fa-plus h-5 w-5 mr-2"></i> เพิ่มสินค้าใหม่
             </a>
@@ -170,8 +166,7 @@
                     <td th:text="${product.stockQuantity}">จำนวนสต็อก</td>
                     <td th:text="${product.category.name}">ประเภท</td>
                     <td th:text="${product.promotion.name}">โปรโมชัน</td>
-                    <td><img th:src="@{${product.imageUrl}}" alt="รูปภาพสินค้า" style="width: 50px; height: 50px;" />
-                    </td>
+                    <td><img th:src="@{${product.imageUrl}}" alt="รูปภาพสินค้า" style="width: 50px; height: 50px;" /></td>
                     <td th:text="${product.status}">สถานะ</td>
                     <td>
                         <a th:href="@{'/admin/products/edit/' + ${product.id}}" class="btn btn-warning">แก้ไข</a>
@@ -187,7 +182,6 @@
         <div class="user-icon-content">
             <div class="role-label" style="font-weight: bold;">Admin</div>
             <i class="fas fa-user-circle fa-3x text-gray-700"></i>
-
         </div>
     </div>
 
@@ -195,9 +189,7 @@
         function confirmDelete() {
             return confirm('คุณแน่ใจว่าต้องการลบสินค้านี้?'); // กล่องข้อความยืนยัน
         }
-    </script>
 
-    <script>
         let sortDirection = {};
 
         function sortTable(columnIndex) {
@@ -245,7 +237,6 @@
 
         function filterTable() {
             const searchTerm = document.getElementById('searchInput').value.toLowerCase();
-            const promotionFilter = document.getElementById('promotionFilter').value.toLowerCase();
             const table = document.getElementById('productTable');
             const rows = table.querySelectorAll('tr');
 
@@ -255,8 +246,7 @@
 
                 for (let i = 0; i < cells.length; i++) {
                     const cell = cells[i];
-                    if (cell.innerText.toLowerCase().includes(searchTerm) &&
-                        (promotionFilter === '' || cell.innerText.toLowerCase() === promotionFilter)) {
+                    if (cell.innerText.toLowerCase().includes(searchTerm)) {
                         rowVisible = true;
                         break;
                     }
